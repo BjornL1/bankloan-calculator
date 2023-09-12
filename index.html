@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Calculate your bank loan pay off options">
+    <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
+    <title>Bank loan pay off calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>Bank loan pay off calculator</h1>
+    <p>The monthly pay-off field and pay-off time fields are test varibles, a failed result will display a
+        recommendation
+        to either: Increase
+        monthly pay-off amount to achieve the target pay-off time target or<br>
+        Extend the pay-off time to achieve the monthly target cost.</p>
+
+    <div>
+        <label for="totalcost">Bank loan</label>
+        <input id="totalcost" type="number" placeholder="Totalcost">
+        <label for="interest-rate">Interest rate</label>
+        <input id="interest-rate" type="number" placeholder="%">
+        <label for="monthly-payoff">Monthly amortization</label>
+        <input id="monthly-payoff" type="number" placeholder="Monthly pay-off cost target">
+        <label for="year-payoff">Pay off time</label>
+        <input id="year-payoff" type="number" placeholder="Pay off time target (max 50 years)">
+    </div>
+
+    <div>
+        <button onclick="calculate()">Calculate</button><br>
+        <button onclick="email()">Email result</button><br>
+        <button onclick="clear()">Clear</button>
+    </div>
+
+
+    <h2>Result</h2>
+    <p id="output">Output</p>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
