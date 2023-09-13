@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Calculate your bank loan pay off options">
     <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
-    <title>Bank loan pay off calculator</title>
+    <title>Bank loan payoff calculator</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <h1>Bank loan pay off calculator</h1>
+    <h1>Bank loan payoff calculator</h1>
     <p>The monthly pay-off field and pay-off time fields are test varibles, a failed result will display a
         recommendation
         to either: Increase
         monthly pay-off amount to achieve the target pay-off time target or<br>
         Extend the pay-off time to achieve the monthly target cost.</p>
 
-    <div>
+    <div class="formbackground">
         <form id="inputfields">
             <label for="totalcost">Bank loan</label>
             <input id="totalcost" type="number" placeholder="Totalcost">
@@ -32,7 +32,7 @@
         </form>
     </div>
 
-    <div>
+    <div class=buttonrow>
         <button onclick="calculate()">Calculate</button><br>
         <button onclick="email()">Email result</button><br>
         <button onclick="clearform()">Clear</button>
@@ -40,7 +40,7 @@
 
 
     <h2>Result</h2>
-    <p id="output">Output</p>
+    <p id="output"></p>
 
     <script src="assets/js/script.js"></script>
 </body>
