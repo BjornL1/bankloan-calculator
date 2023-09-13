@@ -20,20 +20,22 @@
         Extend the pay-off time to achieve the monthly target cost.</p>
 
     <div>
-        <label for="totalcost">Bank loan</label>
-        <input id="totalcost" type="number" placeholder="Totalcost">
-        <label for="interest-rate">Interest rate</label>
-        <input id="interest-rate" type="number" placeholder="%">
-        <label for="monthly-payoff">Monthly amortization</label>
-        <input id="monthly-payoff" type="number" placeholder="Monthly pay-off cost target">
-        <label for="year-payoff">Pay off time</label>
-        <input id="year-payoff" type="number" placeholder="Pay off time target (max 50 years)">
+        <form id="inputfields">
+            <label for="totalcost">Bank loan</label>
+            <input id="totalcost" type="number" placeholder="Totalcost">
+            <label for="interest-rate">Interest rate</label>
+            <input id="interest-rate" type="number" placeholder="%">
+            <label for="monthly-payoff">Monthly amortization target</label>
+            <input id="monthly-payoff" type="number" placeholder="Monthly pay-off cost target">
+            <label for="year-payoff">Pay off time target</label>
+            <input id="year-payoff" type="number" placeholder="Pay off time target (max 50 years)">
+        </form>
     </div>
 
     <div>
         <button onclick="calculate()">Calculate</button><br>
         <button onclick="email()">Email result</button><br>
-        <button onclick="clear()">Clear</button>
+        <button onclick="clearform()">Clear</button>
     </div>
 
 
