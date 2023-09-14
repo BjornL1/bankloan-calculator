@@ -12,8 +12,10 @@ function calculate() {
 
     let restmonth = 0;
     var resttime = 0;
+    var resttimemonth = 0;
+    payofftime = payofftime * 12;
     var resttimeplus = resttime + payofftime;
-
+    document.getElementById('output').style.color = "white";
 
     for (let i = 0; i < payofftime; i++) {
 
@@ -22,18 +24,20 @@ function calculate() {
         monthlycost = (loan * interestrate) / 12;
 
         loan = loan - amortization;
-        resttime = (loan / amortization);
-        resttime = Math.round(resttime);
+        resttimemonth = (loan / amortization);
+
     }
 
     if (loan <= 0) {
         resttimeplus = initialloan / amortization;
         resttimeplus = Math.ceil(resttimeplus);
+        document.getElementById('output').style.color = "green";
         document.getElementById('output').innerHTML = "PASS! The loan will be paid within the target time. The loan will be paid after" + resttimeplus + "months";
     }
     else {
         restmonth = (initialloan / counter) - amortization;
-        document.getElementById('output').innerHTML = "FAIL! Increase the montly payoff by " + restmonth + "to achive the target time or increase the payoff time with " + resttime + " months to achive the monthly cost target" + " You can also adjust both inputs to achieve another result";
+        document.getElementById('output').style.color = "red";
+        document.getElementById('output').innerHTML = "FAIL! Increase the montly" + "<br>" + "payoff by " + Math.ceil(restmonth) + " to achive the target time or increase the payoff time with " + Math.ceil(resttimemonth) + " months to achive the monthly cost target" + " You can also adjust both inputs to achieve another result";
 
     }
 }
