@@ -5,7 +5,7 @@ body {
     height: 100%;
     width: 100%;
     font-size: 16px;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Amethysta', serif;
 }
 
@@ -27,10 +27,13 @@ p {
 .formbackground {
     background-color: #add8e6;
     padding: 10px;
+    display: flex;
 }
 
 label {
     margin: 20px 0 0 10px;
+    font-weight: bold;
+    display: block;
 }
 
 h2 {
@@ -38,24 +41,38 @@ h2 {
 }
 
 input {
-    display: inline-block;
+    display: block;
     padding: 5px;
     margin: 5px 10px 15px 10px;
-    width: 100%;
+    width: 150px;
     font-family: 'Amethysta', serif;
 }
 
 .buttonrow {
     display: flex;
     justify-content: left;
-    margin: 20px 0 0 20px;
+    margin: 20px 0 0 0px;
+    background-color: #add8e6;
+    padding: 20px;
+    height: 50px;
+
 }
 
 button {
     width: 120px;
     padding: 5px;
     margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 45px;
     font: bold 16px 'Amethysta', serif;
+    height: 45px;
+
+}
+
+.emailinput {
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 #output {
@@ -63,5 +80,169 @@ button {
     height: 120px;
     border-style: outset;
     border-color: black;
+    border-width: 1px;
     border-radius: 10px;
+}
+
+
+#out {
+    width: 300px;
+    height: 120px;
+    border-style: outset;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+#message {
+    display: none;
+}
+
+#dropbutton {
+    display: none;
+}
+
+#quantiti {
+    width: 100px;
+    height: 42px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+#inputfields {
+    display: flex;
+
+}
+
+.blockdisplay {
+    display: block;
+
+}
+
+#interest-rate {
+    width: 100px;
+    height: 30px;
+}
+
+#totalcost {
+    height: 30px;
+}
+
+#calculate {
+    height: 45px;
+    margin-right: 3px;
+
+}
+
+#clear {
+    height: 45px;
+    margin-top: 45px;
+    margin-left: 5px;
+}
+
+#email-result {
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+#fullName {
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 27px;
+}
+
+#email_id {
+    margin-left: 1px;
+    margin-top: 5px;
+    height: 27px;
+}
+
+#headtext {
+    margin-right: 100px;
+}
+
+#displayflex {
+    display: flex;
+}
+
+@media screen and (max-width: 960px) {
+    .formbackground {
+        background-color: #add8e6;
+        padding: 10px;
+        display: block;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #displayflex {
+        display: flex;
+    }
+
+    #calculate {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #clear {
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 524px) {
+    #inputfields {
+        display: block;
+
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .buttonrow {
+        display: block;
+        margin: 0;
+        height: 230px;
+    }
+
+    .emailinput {
+        display: block;
+        background-color: #add8e6;
+        margin-left: 0;
+    }
+
+    #fullName {
+        margin-top: 20px;
+        margin-right: 5px;
+        margin-left: 0;
+        height: 27px;
+    }
+
+    #email_id {
+        margin-left: 0;
+        margin-top: 5px;
+        height: 27px;
+    }
+
+    #email-result {
+        height: 40px;
+        margin-top: 5px;
+        margin-left: 0;
+        margin-right: 2px;
+    }
+
+    #output {
+        width: 280px;
+    }
+
+    #headtext {
+        font-size: 15px;
+    }
 }
