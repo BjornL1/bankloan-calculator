@@ -13,36 +13,65 @@
 
 <body>
     <h1>Bank loan payoff calculator</h1>
-    <p>The monthly pay-off field and pay-off time fields are test varibles, a failed result will display a
-        recommendation
-        to either: Increase
-        monthly pay-off amount to achieve the target pay-off time target or<br>
-        Extend the pay-off time to achieve the monthly target cost.</p>
+    <p id="headtext">Calculate your bank loan cost by using the bank loan, interest rate and payoff years input fields,
+        the result will be displayed after the "calculate" button is clicked.</p>
 
     <div class="formbackground">
         <form id="inputfields">
-            <label for="totalcost">Bank loan</label>
-            <input id="totalcost" type="number" placeholder="Totalcost">
-            <label for="interest-rate">Interest rate</label>
-            <input id="interest-rate" type="number" placeholder="%">
-            <label for="monthly-payoff">Monthly amortization target</label>
-            <input id="monthly-payoff" type="number" placeholder="Monthly pay-off cost target">
-            <label for="year-payoff">Pay off time target</label>
-            <input id="year-payoff" type="number" placeholder="Pay off time target (max 50 years)">
+            <div class="blockdisplay">
+                <label for="totalcost">Bank loan</label>
+                <input id="totalcost" type="number" placeholder="Debt">
+            </div>
+            <div class="blockdisplay">
+                <label for="interest-rate">Interest rate</label>
+                <input id="interest-rate" type="number" placeholder="%">
+            </div>
+
+            <div class="blockdisplay">
+                <label for="quantiti">Payoff years</label>
+                <select id="quantiti"></select>
+            </div>
+
         </form>
+        <div id="displayflex">
+            <button onclick="calculate()" id="calculate">Calculate</button><br>
+            <button onclick="clearform()" id="clear">Clear</button>
+        </div>
     </div>
-
-    <div class=buttonrow>
-        <button onclick="calculate()">Calculate</button><br>
-        <button onclick="email()">Email result</button><br>
-        <button onclick="clearform()">Clear</button>
-    </div>
-
 
     <h2>Result</h2>
     <p id="output"></p>
 
+
+
+    <div class="buttonrow">
+        <button onclick="SendMail()" id="email-result">Email result</button><br>
+        <button onclick="drop()" id="dropbutton">Drop</button>
+
+        <div class="emailinput">
+            <input type="text" id="fullName" placeholder="Full Name" required><br>
+            <input type="email" id="email_id" placeholder="Email Id" required><br>
+            <textarea id="message" placeholder="Message" required></textarea><br>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("9Rn85BVMw5tOgNBB5");
+        })();
+    </script>
+
+
     <script src="assets/js/script.js"></script>
+
+
 </body>
 
 </html>
