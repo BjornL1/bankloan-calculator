@@ -2,247 +2,252 @@
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    font-size: 16px;
-    overflow-x: hidden;
-    font-family: 'Amethysta', serif;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  overflow-x: hidden;
+  font-family: 'Amethysta', serif;
+  margin: 0;
 }
 
+#error {
+  margin-top: 0px;
+  display: flex;
+}
+.emailitems {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.emailfields {
+  margin-right: 5px;
+}
+
+.mailbutton {
+  margin-top: 38px;
+}
+.labelpos {
+  margin-left: 0;
+}
+
+
 h1 {
-    background-color: #0892d0;
-    padding: 20px;
-    color: black;
-    font-family: 'Spectral SC', serif;
+  background-color: #0892d0;
+  padding: 20px;
+  color: black;
+  font-family: 'Spectral SC', serif;
 }
 
 .title {
-    display: inline-block;
+  display: inline-block;
 }
 
 p {
-    margin: 0 0 16px 20px;
+  margin: 0 0 16px 20px;
+  line-height: 20pt;
 }
 
-.formbackground {
-    background-color: #add8e6;
-    padding: 10px;
-    display: flex;
+.calculateform {
+  background-color:#add8e6;
+  padding: 10px;
+  display: flex;
 }
-
+.emailform {
+background-color:#add8e6;
+  margin-top: 20px;
+  display: flex;
+}
+  
 label {
-    margin: 20px 0 0 10px;
-    font-weight: bold;
-    display: block;
+  margin: 15px 0 0 10px;
+  font-weight: bold;
+  display: block;
 }
 
 h2 {
-    margin: 20px 0 0 20px;
+  margin: 10px 0 0 20px;
 }
-
 input {
-    display: block;
-    padding: 5px;
-    margin: 5px 10px 15px 10px;
-    width: 150px;
-    font-family: 'Amethysta', serif;
-}
-
-.buttonrow {
-    display: flex;
-    justify-content: left;
-    margin: 20px 0 0 0px;
-    background-color: #add8e6;
-    padding: 20px;
-    height: 50px;
-
+  display: block;
+  height: 30px;
+  padding: 5px;
+  margin: 5px 5px 15px 10px;
+  width: 107px;
+  font-family: 'Amethysta', serif;
 }
 
 button {
-    width: 120px;
-    padding: 5px;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 45px;
-    font: bold 16px 'Amethysta', serif;
-    height: 45px;
-
+  width: 120px;
+  padding: 5px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 39px;
+  font: bold 16px 'Amethysta', serif;
+  height: 42px;
 }
 
-.emailinput {
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
 
 #output {
-    width: 300px;
-    height: 120px;
-    border-style: outset;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 10px;
-}
+  width: 400px;
+  height: 120px;
+  max-width: 44ch;
+  font-family: monospace;
 
-
-#out {
-    width: 300px;
-    height: 120px;
-    border-style: outset;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 10px;
 }
 
 #message {
-    display: none;
+  display: none;
 }
 
-#dropbutton {
-    display: none;
+#payoff-years {
+width: 120px;
+height: 44px;  
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 5px;
+padding-left: 0px;
+padding-bottom: 0px;  
 }
 
-#quantiti {
-    width: 100px;
-    height: 42px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-}
-
-#inputfields {
-    display: flex;
+#calculate-inputs {
+  display: flex;
 
 }
-
-.blockdisplay {
-    display: block;
-
+.calculatefields {
+  display: block;
 }
 
-#interest-rate {
-    width: 100px;
-    height: 30px;
-}
-
-#totalcost {
-    height: 30px;
+#bankloan {
+  height: 30px;
 }
 
 #calculate {
-    height: 45px;
-    margin-right: 3px;
-
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #616161;
 }
 
 #clear {
-    height: 45px;
-    margin-top: 45px;
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 #email-result {
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 2px;
+  height: 40px;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #fullName {
-    margin-top: 5px;
-    margin-right: 5px;
-    height: 27px;
+  margin-top: 5px;
+  height: 27px;
+  width: 165px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#name-error {
+  margin-top: 0;
+  margin-left: 2px;
+  
+}
+#email-id {
+  margin-left: 0;
+  margin-top: 5px;
+  height: 27px;
+  width: 165px;
+  margin-bottom: 5px;
 }
 
-#email_id {
-    margin-left: 1px;
-    margin-top: 5px;
-    height: 27px;
+#email-error {
+  margin-top: 0;
+  margin-left: 2px;  
 }
 
-#headtext {
-    margin-right: 100px;
+#instruction-text {
+  margin-right: 100px;
+  line-height: 15pt;
 }
-
-#displayflex {
-    display: flex;
+#calculate-buttons {
+  display: flex;
 }
 
 @media screen and (max-width: 960px) {
-    .formbackground {
-        background-color: #add8e6;
-        padding: 10px;
-        display: block;
-    }
+.calculateform {
+  background-color:#add8e6;
+  padding: 10px;
+  display: block;
+}
+h1 {
+  font-size: 24px;
+}  
 
-    h1 {
-        font-size: 24px;
-    }
+#calculate {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#clear {
+  margin-top: 10px;
+}  
+  
+}
 
-    #displayflex {
-        display: flex;
-    }
+ @media screen and (max-width: 524px) {
 
-    #calculate {
-        margin-left: 10px;
-        margin-top: 10px;
-    }
+.emailform {
+background-color:#add8e6;
+}
 
-    #clear {
-        margin-top: 10px;
-    }
+.emailfields {
+  margin-left: 15px;
+}
+.emailitems {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 0px;
+ 
+}
+#calculate-inputs {
+  display: block;
 
 }
 
-@media screen and (max-width: 524px) {
-    #inputfields {
-        display: block;
+#name-error {
+  margin: 0;
+  padding: 0;
+}
 
-    }
+ h1 {    
+   font-size: 20px;
+ }
 
-    h1 {
-        font-size: 20px;
-    }
+#fullname {
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-left: 0;
+  margin-bottom: 0;
+  height: 27px;
+}
 
-    .buttonrow {
-        display: block;
-        margin: 0;
-        height: 230px;
-    }
-
-    .emailinput {
-        display: block;
-        background-color: #add8e6;
-        margin-left: 0;
-    }
-
-    #fullName {
-        margin-top: 20px;
-        margin-right: 5px;
-        margin-left: 0;
-        height: 27px;
-    }
-
-    #email_id {
-        margin-left: 0;
-        margin-top: 5px;
-        height: 27px;
-    }
-
-    #email-result {
-        height: 40px;
-        margin-top: 5px;
-        margin-left: 0;
-        margin-right: 2px;
-    }
-
-    #output {
-        width: 280px;
-    }
-
-    #headtext {
-        font-size: 15px;
-    }
+#email-id {
+  margin-left: 0;
+  margin-top: 5px;
+  height: 27px;
+  
+}
+   
+#email-result {
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 10px;
+  
+}
+  #output {
+  height: 140px;
+   
+}
+#instruction-text {
+  font-size: 15px;
+}
 }
