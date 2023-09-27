@@ -2,76 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Calculate your bank loan pay off options">
-    <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
-    <title>Bank loan payoff calculator</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Calculate your bank loan pay off options">
+  <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
+  <title>Bank loan payoff calculator</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <h1>Bank loan payoff calculator</h1>
-    <p id="headtext">Calculate your bank loan cost by using the bank loan, interest rate and payoff years input fields,
-        the result will be displayed after the "calculate" button is clicked.</p>
+  <h1>Bank loan payoff calculator</h1>
+  <p id="instruction-text">Minimum recommended bankloan payoff (amortization) amount per year is 2% and no less then a fixed number of 100 (e.g. €) per month of the bank loan.<br>The loan is calculated by using a fixed amortization amount payoff model, the monthly cost will decresase proportionally to amortization.</p>
 
-    <div class="formbackground">
-        <form id="inputfields">
-            <div class="blockdisplay">
-                <label for="totalcost">Bank loan</label>
-                <input id="totalcost" type="number" placeholder="Debt">
-            </div>
-            <div class="blockdisplay">
-                <label for="interest-rate">Interest rate</label>
-                <input id="interest-rate" type="number" placeholder="%">
-            </div>
-
-            <div class="blockdisplay">
-                <label for="quantiti">Payoff years</label>
-                <select id="quantiti"></select>
-            </div>
-
-        </form>
-        <div id="displayflex">
-            <button onclick="calculate()" id="calculate">Calculate</button><br>
-            <button onclick="clearform()" id="clear">Clear</button>
-        </div>
+<div class ="calculateform">
+  <form id="calculate-inputs">
+    <div class="calculatefields">
+    <label for="bankloan">Bank loan</label>
+    <input id="bankloan" type="tel" 
+      
+      placeholder="Min 10000" maxlength="9" minlength="5">
+    </div>
+    
+    <div class="calculatefields">
+    <label for="interest-rate">Interest rate</label>
+    <input id="interest-rate" type="number" placeholder="%">
+    </div>
+  
+    <div class="calculatefields">
+    <label for ="payoff-years">Payoff years</label>
+    <select id="payoff-years"></select>
     </div>
 
-    <h2>Result</h2>
-    <p id="output"></p>
-
-
-
-    <div class="buttonrow">
-        <button onclick="SendMail()" id="email-result">Email result</button><br>
-        <button onclick="drop()" id="dropbutton">Drop</button>
-
-        <div class="emailinput">
-            <input type="text" id="fullName" placeholder="Full Name" required><br>
-            <input type="email" id="email_id" placeholder="Email Id" required><br>
-            <textarea id="message" placeholder="Message" required></textarea><br>
-
-        </div>
+  </form> 
+    <div id="calculate-buttons">
+    <button  id="calculate" disabled="disabled">Calculate</button><br>
+    <button id="clear">Clear</button>
     </div>
+</div>
+
+  <h2>Result:</h2>
+  <p id="output" class="linebreak"></p>
+
+<div class ="emailform">
+  <form id="email-inputs">
+    <div class="emailitems">
+          
+      <div class="mailbutton">
+      <button onclick="SendMail()" id="email-result" class="button">Email result</button><br>
+      </div>
+         
+          <div class="emailfields">
+          <label for="fullName" class="labelpos">Full name</label>     
+          <input type="text" id="fullName">
+          <p id="name-error"></p>  
+          </div>
+            
+          <div class="emailfields">
+          <label for="email-id" class="labelpos">Email</label>  
+          <input type="email" id="email-id">
+          <p id="email-error"></p>
+          </div>  
+          <textarea id="message" placeholder="Message" required></textarea><br>
+  
+      </div>
+  </form> 
+</div>
 
 
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script>
+   (function(){
+      emailjs.init("9Rn85BVMw5tOgNBB5");
+   })();
+</script>
 
 
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("9Rn85BVMw5tOgNBB5");
-        })();
-    </script>
-
-
-    <script src="assets/js/script.js"></script>
-
-
+  
 </body>
 
 </html>
