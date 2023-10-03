@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+.required::after {
+        content: ' *';
+        color: red;
+}
 #error {
   margin-top: 0px;
   display: flex;
@@ -89,10 +93,9 @@ button {
 
 #output {
   width: 400px;
-  height: 120px;
+  height: 170px;
   max-width: 44ch;
   font-family: monospace;
-
 }
 
 #message {
@@ -130,7 +133,9 @@ padding-bottom: 0px;
 #clear {
   margin-left: 5px;
 }
-
+button:hover:enabled{
+    background-color: lightgrey;
+}
 #email-result {
   height: 40px;
   margin-top: 0px;
@@ -197,7 +202,9 @@ h1 {
 .emailform {
 background-color:#add8e6;
 }
-
+.error-messages {
+  margin-top: 50px;
+}
 .emailfields {
   margin-left: 15px;
 }
@@ -245,9 +252,15 @@ background-color:#add8e6;
 }
   #output {
   height: 140px;
+  font-size: 12px;  
    
 }
 #instruction-text {
   font-size: 15px;
 }
 }
+
+/*
+ @media screen and (max-width: 319px) {
+
+ } */
