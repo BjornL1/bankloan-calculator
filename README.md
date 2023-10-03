@@ -134,7 +134,7 @@ If the user wishes to send the result, an email function is implemented, this se
   - The email field also displays an error if the email is not filled correctly e.g. missing "@".
 ![](readme_images/send_result_nok.png)
 
-Once the name and email address is entered correctly the send result will be enabled according to the picture below.
+- Once the name and email address is entered correctly the send result will be enabled according to the picture below.
 ![](readme_images/send_result_ok.png)
 
 
@@ -297,7 +297,7 @@ The idea is my own and also the basis for which content should be included, thou
 
 ### Acknowledgments
 
-- I would like to thank the following:
+- I would like to thank the following:Collaboration Ter
   - Antonio Rodriguez (mentor) for guidance and support. 
   - Slack community - for quick feedback on various questions
   - My family - for their patience with having me coding sometimes late evenings and nights.  

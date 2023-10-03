@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Calculate your bank loan pay off options">
   <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
   <title>Bank loan payoff calculator</title>
@@ -13,20 +13,20 @@
 
 <body>
   <h1>Bank loan payoff calculator</h1>
-  <p id="instruction-text">Minimum recommended bankloan payoff (amortization) amount per year is 2% and no less then a fixed number of 100 (e.g. €) per month of the bank loan.<br>The loan is calculated by using a fixed amortization amount payoff model, the monthly cost will decresase proportionally to amortization.</p>
+  <p id="instruction-text">Minimum loan amount is <strong>10000, </strong> the maximium interestrate is <strong>99.99% </strong>and the recommended bank loan payoff (amortization) amount per year is 2%.<br>
+If the amortization is calculated below 100 (e.g €) per month an error message will be displayed suggesting to reduce the number  of payoff years.<br>The loan is calculated by using a fixed amortization amount payoff model, the monthly cost will decrease proportionally to amortization.</p>
 
 <div class ="calculateform">
   <form id="calculate-inputs">
     <div class="calculatefields">
-    <label for="bankloan">Bank loan</label>
-    <input id="bankloan" type="tel" 
-      
-      placeholder="Min 10000" maxlength="9" minlength="5">
+    <label for="bankloan" class="required">Bank loan</label>
+    <input id="bankloan" type="text"
+      placeholder="Min 10000" maxlength="9" minlength="5" required oninput="valid(this)" >
     </div>
-    
+     
     <div class="calculatefields">
-    <label for="interest-rate">Interest rate</label>
-    <input id="interest-rate" type="number" placeholder="%">
+        <label for="interest-rate" class="required">Interest rate</label>
+        <input id="interest-rate" type="text" placeholder="0.00 (%)" maxlength="5" oninput="valid(this)" required>
     </div>
   
     <div class="calculatefields">
@@ -49,7 +49,7 @@
     <div class="emailitems">
           
       <div class="mailbutton">
-      <button onclick="SendMail()" id="email-result" class="button">Email result</button><br>
+      <button onclick="SendMail()" id="email-result" class="button">Send result</button><br>
       </div>
          
           <div class="emailfields">
@@ -84,3 +84,6 @@
 </body>
 
 </html>
+
+
+
