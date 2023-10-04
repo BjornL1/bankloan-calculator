@@ -9,7 +9,29 @@ body {
   font-family: 'Amethysta', serif;
   margin: 0;
 }
+#four-solution {
+    background-color: #add8e6;
+    padding: 10px;
+}
 
+#four-o-four {
+    font-family: 'Amethysta', serif;
+}
+
+#four-border {
+    width: 200px;
+    margin-left: 20px;
+    color: black;
+    padding-bottom: 10px;
+
+}
+
+#four-link {
+    color: black;
+    font-family: 'Amethysta', serif;
+    margin-left: 0;
+    font-size: 16px;
+}
 .required::after {
         content: ' *';
         color: red;
