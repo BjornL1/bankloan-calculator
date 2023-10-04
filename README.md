@@ -105,7 +105,7 @@ Courier (monospace): Result (output text from calculations).
  - Result field
    - Result output
  - Send result field
-   - Email result button
+   - Send result button
    - Name field
    - Email id field
 
@@ -122,32 +122,40 @@ Courier (monospace): Result (output text from calculations).
       - 1: The user has entered a value that is corresponding to the minimum requirement of "100" described in the info text in the first section. The values calculated are: amortization amount per month, first month (highest) cost, average cost per month and the total cost of loan. 
       - 2: The user has entered a value that is not matching the recommended input, in this scenario a message will be displayed to let the user reduce the payoff years to a level needed to meet the calculation requirements. The purpose of implementing this minimum requirement is to encourage a rational level of payment per month in relation to the sum of the loan, in the case of lending 10000 of 50 years the payment will be too low from this perspective.
     - The clear button can be used to clear all three input fields if requested, by using the clear function the calculate button will be set to disabled.
-![](readme_images/calculation_field.png)
+      
+    ![](readme_images/calculation_field.png)
+
   - Result: This section presents to result of the calculation, if the result is according to minimum recommendations the result will be displayed in green to show that the calculation was performed with recommended input values.
-![](readme_images/calculation_ok.png)
+    
+    ![](readme_images/calculation_ok.png)
+
 If the calculation is done with values in payoff years leading to a payoff less than 100 per month a message will be displayed in red which indicates a "warning" to the user. The value needed to use in payoff years to perform a valid calculation will be presented to the user.
+
 ![](readme_images/calculation_nok.png) 
+
 - Email send result field
 If the user wishes to send the result, an email function is implemented, this section includes a send result button, name field and a email id field. 
   - The send result button is by default disabled to guide the user to fill the name and email first. Once both fields are filled correctly the button will be enabled.
   - If the full name field is left empty, an error message is presented under the name field, once the name is entered the message is removed.
   - The email field also displays an error if the email is not filled correctly e.g. missing "@".
-![](readme_images/send_result_nok.png)
+    
+  ![](readme_images/send_result_nok.png)
 
 - Once the name and email address is entered correctly the send result will be enabled according to the picture below.
-![](readme_images/send_result_ok.png)
+  
+  ![](readme_images/send_result_ok.png)
 
 
 ### Future Implementations
-  - Use bars for the input fields that the user can move either with the mouse pointer (laptop) or fingers (phone/tablet), the calculation results would be updated continously once the bar is dragged across the screen.
-  - Create a database for the bikes in order to easily control the number of bikes available and the repair status. 
-  
+  - Use "bars” for the input fields that the user can move either with the mouse pointer (laptop) or fingers (phone/tablet), the calculation results would be updated continuously once the bar is dragged across the screen.
+  - Connect the page to a database to let users add either a valid currency that can be added after the amount, by using a database the currency will be updated continuously. Furthermore, this type of functionality could also be used to use ratios between different currencies (e.g. compare the loan in euro and dollars).
+
 ### Accessibility
 
 - I have been mindful during coding to ensure that the website is as accessible and friendly as possible. I have achieved this by:
 - Using semantic HTML.
 - Added metadata characteristics for optimizing SEO.
-- Use the "hover" function on the sign-up submit button.
+- Use the "hover" function for buttons.
 
 ## Technologies Used
 
