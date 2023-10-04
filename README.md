@@ -82,12 +82,12 @@ Courier (monospace): Result (output text from calculations).
 
 <details>
 <summary>Desktop wireframe</summary>
-<img src="wireframe_desktop.png" width="500">
+<img src="readme_images/wireframe_desktop.png" width="500">
 </details>
 
 <details>
 <summary>Mobile wireframe</summary>
-<img src="wireframe_mobile.png" width="500">
+<img src="readme_images/wireframe_mobile.png" width="250">
 </details>
 
 ## Features
