@@ -9,7 +9,7 @@
   <meta name="keywords" content="bankloan, cost, pay off, time, calculate">
   <title>Bank loan payoff calculator</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="x-icon" href="favicon.ico">
+  <link rel="icon" type="images/x-icon" href="/favicon.ico">
 </head>
 
 <body>
@@ -18,58 +18,55 @@
 If the amortization is calculated below 100 (e.g €) per month an error message will be displayed suggesting to reduce the number  of payoff years.<br>The loan is calculated by using a fixed amortization amount payoff model, the monthly cost will decrease proportionally to amortization.</p>
 
 <div class ="calculateform">
-  <form id="calculate-inputs">
+  <form id="calculate-inputs"> 
     <div class="calculatefields">
-    <label for="bankloan" class="required">Bank loan</label>
-    <input id="bankloan" type="text"
-      placeholder="Min 10000" maxlength="9" minlength="5" required oninput="valid(this)" >
+      <label for="bankloan" class="required">Bank loan</label>
+      <input id="bankloan" type="text" placeholder=" Min 10000" maxlength="9" minlength="5" required oninput="valid(this)" >
     </div>
-     
+    
     <div class="calculatefields">
-        <label for="interest-rate" class="required">Interest rate</label>
-        <input id="interest-rate" type="text" placeholder="0.00 (%)" maxlength="5" oninput="valid(this)" required>
+      <label for="interest-rate" class="required">Interest rate</label>
+      <input id="interest-rate" type="text" placeholder=" 0.00 (%)" maxlength="5" oninput="valid(this)" required>
     </div>
   
     <div class="calculatefields">
-    <label for ="payoff-years">Payoff years</label>
-    <select id="payoff-years"></select>
+      <label for ="payoff-years">Payoff years</label>
+      <select id="payoff-years"></select>
     </div>
-
+ 
   </form> 
     <div id="calculate-buttons">
-    <button  id="calculate" disabled="disabled">Calculate</button><br>
+    <button id="calculate" disabled="disabled">Calculate</button><br>
     <button id="clear">Clear</button>
     </div>
 </div>
 
-  <h2>Result:</h2>
-  <p id="output" class="linebreak"></p>
+<h2>Result:</h2>
+<p id="output" class="linebreak"></p>
 
 <div class ="emailform">
   <form id="email-inputs">
     <div class="emailitems">
-          
+      
       <div class="mailbutton">
-      <button onclick="SendMail()" id="email-result" class="button">Send result</button><br>
+        <button onclick="SendMail()" id="email-result" class="button">Send result</button>
+      </div>        
+          
+      <div class="emailfields">
+        <label for="fullName" class="labelpos">Full name</label>     
+        <input type="text" id="fullName">
+        <p id="name-error"></p>  
       </div>
-         
-          <div class="emailfields">
-          <label for="fullName" class="labelpos">Full name</label>     
-          <input type="text" id="fullName">
-          <p id="name-error"></p>  
-          </div>
-            
-          <div class="emailfields">
-          <label for="email-id" class="labelpos">Email</label>  
-          <input type="email" id="email-id">
-          <p id="email-error"></p>
-          </div>  
-          <textarea id="message" placeholder="Message" required></textarea><br>
-  
-      </div>
+    </div>
+    
+      <div class="emailfield">
+        <label for="email-id" class="labelpos-email">Email</label>  
+        <input type="email" id="email-id">
+        <p id="email-error"></p>
+      </div>  
+      <textarea id="message" placeholder="Message" required></textarea><br>
   </form> 
 </div>
-
 
 <script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
@@ -80,11 +77,5 @@ If the amortization is calculated below 100 (e.g €) per month an error message
    })();
 </script>
 
-
-  
 </body>
-
 </html>
-
-
-
