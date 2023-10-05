@@ -31,7 +31,6 @@ body {
   font-size: 16px;
 }
 
-
 /* Title, infotext and generic properties*/
 .title {
   display: inline-block;
@@ -42,12 +41,10 @@ h1 {
   color: black;
   font-family: 'Spectral SC', serif;
 }
-
 p {
   margin: 0 0 16px 20px;
   line-height: 20pt;
 }
-  
 label {
   margin: 15px 0 0 10px;
   font-weight: bold;
@@ -64,13 +61,16 @@ input {
   margin: 5px 5px 15px 10px;
   width: 107px;
   font-family: 'Amethysta', serif;
+  font-size: 16px;
 }
 button {
   width: 120px;
-  padding: 5px;
+  padding: 0;
   margin: 39px 20px 0;
   font: bold 16px 'Amethysta', serif;
   height: 42px;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 button:hover:enabled{
     background-color: lightgrey;
@@ -103,9 +103,11 @@ button:hover:enabled{
 width: 120px;
 height: 42px;  
 margin: 5px 10px;
-padding-left: 5px;  
+padding-left: 5px;
+-webkit-appearance: none;
+border-radius: 0;
+font-size: 15px;
 }
-
 #calculate {
   margin: 39px 10px 0;
   color: #616161;
@@ -123,50 +125,56 @@ h2 {
   height: 170px;
   max-width: 44ch;
   font-family: monospace;
+  margin-bottom: 0;
 }
 
 /*Email, send result section*/
+.emailform {
+  background-color:#add8e6;
+  display: flex;
+}
 .emailitems {
   display: flex;
-  margin: 10px 0 10px;
+  margin: 10px 0 20px;
 }
 .emailfields {
   margin-right: 5px;
 }
-.labelpos {
-  margin-left: 0;
-}
 .mailbutton {
   margin-top: 38px;
+  width: 100px;
 }
-.emailform {
-  background-color:#add8e6;
-  margin-top: 20px;
-  display: flex;
+.labelpos {
+  margin: 14px 0 4px 55px;
+}
+.labelpos-email {
+  margin-left: 155px;
 }
 /* Used for handling the EmailJS function*/
 #message {
   display: none;
 }
 #email-result {
-  height: 40px;
-  margin: 3px 15px 0;
+  height: 42px;
+  margin: 1px 15px 0 20px;
 }
 #fullName {
-  height: 27px;
-  width: 165px;
-  margin: 5px 10px 5px 0;
+  height: 30px;
+  width: 380px;
+  margin: 4px 10px 5px 55px;
+  font-size: 16px;
 }
 #name-error {
- margin: 0 2px;
+ margin: 0 55px;
 }
 #email-id {
-  height: 27px;
-  width: 165px;
-  margin: 5px 0;
+  height: 30px;
+  width: 380px;
+  margin: 4px 10px 5px 155px;
+  font-size: 16px;
 }
 #email-error {
- margin: 0 2px;
+ margin: 0 155px;
 }
 
 /* Media query for ipad/larger mobilephone */
@@ -186,16 +194,56 @@ margin: 10px 10px 5px 10px;
 #clear {
   margin-top: 10px;
 }
+#emailinputs {
+  height: 10px;
+}
+.emailitems {
+  display: block;
+  margin-top: 0;
+}
+.mailbutton {
+  width: 100px;
+  margin: 15px 0 20px;
+}
+#fullName {
+  margin-left: 20px;
+}
+#name-error {
+  margin-left: 20px;
+}
+#email-id {
+  margin-left: 20px;
+}
+#email-error {
+ margin-left: 20px;
+}
+.labelpos {
+  margin-left: 20px;
+}
+.labelpos-email {
+  margin-left: 25px;
+}
 }
 
 /* Media query for medium/small mobilephone */
 @media screen and (max-width: 524px) {
 
+h1 {    
+   font-size: 15px;
+}
+#instruction-text {
+  font-size: 15px;
+}
+#calculate-inputs {
+  display: block;
+}
+#output {
+  height: 190px;
+  font-size: 12px;  
+}
+
 .emailform {
 background-color:#add8e6;
-}
-.error-messages {
-  margin-top: 50px;
 }
 .emailfields {
   margin-left: 15px;
@@ -203,39 +251,36 @@ background-color:#add8e6;
 .emailitems {
   display: block;
   margin: 0;
- 
 }
-#calculate-inputs {
-  display: block;
+.mailbutton {
+  margin-top: 10px;
+  height: 10px;
 }
-#name-error {
-  margin: 0;
+#email-result {
+  margin: 5px 10px 0 20px;
   padding: 0;
 }
- h1 {    
-   font-size: 20px;
- }
 #fullName {
- height: 27px;
- margin: 5px 5px 4px 0;
+ margin: 5px 5px 4px 5px;
+  width: 300px;
+}
+#name-error {
+  margin-left: 5px;
 }
 #email-id {
-  height: 27px;
-  margin: 5px 0;
+  margin: 5px 0 0 20px;
+  width: 300px;
 } 
-#email-result {
-  height: 40px;
-  margin: 5px 10px 0 15px;
+#email-error {
+  margin-top: 5px;
 }
-#output {
-  height: 170px;
-  font-size: 12px;  
-}
-#instruction-text {
-  font-size: 15px;
-}
-  .mailbutton {
-  margin-top: 10px;
+.labelpos {
+  margin-top: 60px;
+  margin-left: 5px;
+  margin: 60px 0 0 5px;
+  }
+.labelpos-email {
+  margin-left: 20px;
 }
 }
 
@@ -248,11 +293,19 @@ background-color:#add8e6;
 #calculate-buttons {
   display: block;
 }
+#clear {
+  margin-left: 10px;
+}
 #output {
   height: 250px;
   width: 200px;
 }
-#clear {
-  margin-left: 10px;
-}  
+#fullName {
+ margin: 5px 5px 4px 5px;
+  max-width: 240px;
+}
+#email-id {
+  margin: 5px 0 0 20px;
+  max-width: 240px;
+} 
 }
