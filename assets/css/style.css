@@ -262,14 +262,14 @@ background-color:#add8e6;
 }
 #fullName {
  margin: 5px 5px 4px 5px;
-  width: 300px;
+  width: 270px;
 }
 #name-error {
   margin-left: 5px;
 }
 #email-id {
   margin: 5px 0 0 20px;
-  width: 300px;
+  width: 270px;
 } 
 #email-error {
   margin-top: 5px;
@@ -302,10 +302,10 @@ background-color:#add8e6;
 }
 #fullName {
  margin: 5px 5px 4px 5px;
-  max-width: 220px;
+  max-width: 227px;
 }
 #email-id {
   margin: 5px 0 0 20px;
-  max-width: 220px;
+  max-width: 227px;
 } 
 }
