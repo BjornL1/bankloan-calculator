@@ -2,7 +2,7 @@
 
 This site enables calculations of a payoff plan both on a monthly basis as well as displaying the total cost of the loan, by altering the input values on the page, different cost scenarios can be tested.
 
-![landingpage](readme_images/landingpage.png)
+![landingpage](readme_images/landingpage_.png)
 
 Link to the site:
 [BANK LOAN PAYOFF CALCULATOR](https://bjornl1.github.io/bankloan-calculator/)
@@ -112,7 +112,7 @@ Courier (monospace): Result (output text from calculations).
 
 - Header and information text field
   -  The header at the top of the site is followed by a paragraph explaining the input requirements as well as the type of loan that is calculated and how the cost relates to amortization (payoff years).
-![](readme_images/header_and_infotext.png)
+![](readme_images/header_and_infotext_.png)
 - Calculation field
   - In this section, the user can test different levels of loan (time and amount). All input fields are restricted to only allow digits (in the interest rate a dot is allowed to handle decimals).
     - The bank loan field is set to an interval of 10000 - 999999999, if a lower value then 10000 is entered the calculate button will remain disabled while a maximum length of 9 characters is set to prevent writing an infinite value.
@@ -139,11 +139,11 @@ If the user wishes to send the result, an email function is implemented, this se
   - If the full name field is left empty, an error message is presented under the name field, once the name is entered the message is removed.
   - The email field also displays an error if the email is not filled correctly e.g. missing "@".
     
-  ![](readme_images/send_result_nok.png)
+  ![](readme_images/send_result_nok_.png)
 
 - Once the name and email address is entered correctly the send result will be enabled according to the picture below.
   
-  ![](readme_images/send_result_ok.png)
+  ![](readme_images/send_result_ok_.png)
 
 
 ### Future Implementations
