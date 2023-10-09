@@ -1,148 +1,97 @@
-// Code for preventing dot to be entered in input field for bankloan (specific coding)
-document.getElementById("bankloan").addEventListener("change", function(event){
-    preventDot();
-});
+// Code for preventing anything but number (bankloan) and anything but number or dot for interest rate
 
-function preventDot() {
-}
-    var inputBox = document.getElementById("bankloan");
-
-    var invalidChars = [
-    ".",
-];
-
-inputBox.addEventListener("keydown", function(e) {
-    if (invalidChars.includes(e.key)) {
-    e.preventDefault();
-    }
+let bankloan = document.getElementById("bankloan");
+bankloan.addEventListener("input", function() {
+    var bankcopy = bankloan.value; 
+    bankcopy = bankcopy.replaceAll(/\D+/g, '');
+    bankloan.value = bankcopy;
 });
 
 
-let fieldLength = document.getElementById("interest-rate");
-fieldLength.addEventListener("keyup" , shortenLength);
-function shortenLength() {
-    const copyLength = fieldLength.value;
-    if (copyLength.includes(".")) {
-    fieldLength.value = fieldLength.value.substr(0, 5);
+let interestmask = document.getElementById("interest-rate");
+  interestmask.addEventListener("input", function() {
+    var rate = interestmask.value; 
+    rate = rate.replace(/[^0-9.]/g, '');
+    interestmask.value = rate;
+});
+
+
+let fieldlength = document.getElementById("interest-rate");
+fieldlength.addEventListener("input", function() {
+    var copylength = fieldlength.value;
+    fieldlength.value = copylength.replace(/\.{2,}/g, '.');
+    if (fieldlength.value.includes(".")) {
+        var splitfield = fieldlength.value.split('.');
+        splitfield[1] = splitfield[1].substring(0, 2);
+        fieldlength.value = splitfield.join('.');
     }else{
-    fieldLength.value = fieldLength.value.substr(0, 2);
-  }
-}
-
-/*The 2 blocks below is code for masking digits and dot in interest-rate field and limiting input to be lower than 100*/
-var RegExp = new RegExp(/^\d*\.?\d*$/);
-var val = document.getElementById("interest-rate").value;
-function valid(elem) {
-  if (RegExp.test(elem.value)) {
-      val = elem.value;
-      }else{
-      elem.value = val;
-      }
-}
-
-var valuelimit = document.getElementById("interest-rate").value;
-function validity(elem) {
-  if (valuelimit >100) {
-      val = elem.value; 
-      }else{
-      elem.value = val;
-      }
-}
-
-var val = document.getElementById("interest-rate").value;
-if(document.getElementById("interest-rate") !=null){
-document.getElementById("interest-rate").onkeypress = function(event){             
-  var charCode = document.getElementById("interest-rate").value.toString();
-      if(charCode.includes(".")){
-    	var numb =  charCode.split(".")[1];
-      if(numb!=null && numb.length>1)
-      {alert("Only 2 decimal places allowed");
-      return false;
-      }
+    fieldlength.value = fieldlength.value.substr(0, 2);
     }
-  };
-}
+});
 
-function quantity(amount){
+
+// Code for adding numbers to dropdown menu (specific coding).
+
+function addOptions() {
     var select = document.getElementById('payoff-years');
-    for (var i = 0; i < amount; i++){
-    select.options[select.options.length] = new Option(i+1, i);
-    }
+    var i = 0;
+    do{
+        select.options[select.options.length] = new Option(i + 1, i);
+        i++;
+    }while (i < 50);
     document.getElementById('calculate').style.color = "grey";
     document.getElementById('email-result').style.color = "grey";
-    }
-quantity(50);
+}
+addOptions();
 
 
-// Start of calculation and result output block
+// Code for calculation and result output block
+
 function calculate() {  
     let loan = document.getElementById('bankloan').value;
     let interestrate = document.getElementById('interest-rate').value;
-    let payofftime = document.getElementById('payoff-years').selectedIndex +1;
-    let amortization = 0;
-
     interestrate = interestrate / 100;
-    let initialloan = loan;
-    let totalloan = loan * interestrate;
-    let monthlycost = (loan * interestrate) / 12;
-    let counter = 0;
-    let restmonth = 0;
-    var resttime = 0;
-    var resttimemonth = 0;
+    let payofftime = document.getElementById('payoff-years').selectedIndex +1;
     payofftime = payofftime * 12;
-    var resttimeplus = resttime + payofftime;
-    var interestcosttime = 0;
-    interestcosttime = loan / payofftime;
-    var interestreal = (interestrate * initialloan) / 12;
-    var interestcopy = 0;
-    var monthlycostfinal = 0;
-    var month = 0;
-    let monthlycostfix = Math.ceil(initialloan / payofftime);
-    let totalcost = 0;
-    let loanextra = 0;
+    
+    const initialloan = loan;
+    const amortization = Math.ceil(initialloan / payofftime);
+    
+    let firstmonth = Math.ceil((loan * interestrate)/12) + (loan/payofftime);
+    let interesttotal = 0;
+    let interesttemp = 0;
     let monthtotal = 0;
-    let firstmonth = Math.ceil((loan * interestrate)/12);
-    firstmonth = firstmonth + (loan/payofftime);
-    let payofftimereal = payofftime -1;
-    let payofflevel = (initialloan / payofftimereal);
-    payofflevel = payofflevel * 100;
+    let totalcost = 0;
   
-    document.getElementById('output').style.color = "white";
-
     for (let i = 0; i < payofftime; i++) {
-    counter = counter + 1;
-    totalloan = loan;
-    monthlycost = (loan * interestrate) / 12;
-    month = monthlycost;
-    loan = loan - monthlycostfix;
-    resttimemonth = (loan / amortization);
-    monthlycostfinal = monthlycost + month;
-    loanextra = (loan * interestrate) /12;
-    interestcopy = interestcopy + loanextra;
+    loan = loan - amortization;
+    interesttemp = (loan * interestrate) /12;
+    interesttotal = interesttotal + interesttemp;
     }
 
-    if (initialloan >= 10000 && monthlycostfix >= 100) {
-    monthlycost = (initialloan * interestrate) / 12;
-    interestcopy = interestcopy + interestreal;
-    totalcost = Math.ceil(monthlycostfix) * payofftime + interestcopy;
-    monthtotal = totalcost / counter;
-    resttimeplus = initialloan / amortization;
-    resttimeplus = Math.ceil(resttimeplus);
+    if (initialloan >= 10000 && amortization >= 100) {
+
+    interesttotal = interesttotal + ((interestrate * initialloan) / 12);
+    totalcost = Math.ceil(amortization) * payofftime + interesttotal;
+    monthtotal = totalcost / payofftime;
+    
     document.getElementById('output').style.color = "green";
     document.getElementById('output').innerHTML = "Amortization amount per month_____:" + 
-    Math.ceil(monthlycostfix) + ".      " + "First month (highest) cost________:" + 
+    Math.ceil(amortization) + ". " + "First month (highest) cost________:" + 
     Math.ceil(firstmonth)  +  ". " + "Average cost per month____________:" + 
     Math.round(monthtotal) + ". " + "Total cost of loan:_______________:" + 
     Math.ceil(totalcost)+ ". " + "Bankloan:" + initialloan + " Interest rate:" + 
-    interestrate*100 + "%" + "            Payoff years:" + payofftime/12;
+    interestrate*100 + "%" + " Payoff years:" + payofftime/12;
+    
     }
-    else if(initialloan >= 10000 && monthlycostfix < 100)
+    else if(initialloan >= 10000 && amortization < 100)
     {
-    restmonth = (initialloan / 100)/12;
+    
     document.getElementById('output').style.color = "red";
-    document.getElementById('output').innerHTML = " The amortization per month is below the recommended monthly payoff level(100), change payoff time to " + Math.round(restmonth) + " years." + " Bankloan:" + initialloan + " Interest rate:" + 
-    interestrate*100 + "%" + "            Payoff years:" + payofftime/12;
+    document.getElementById('output').innerHTML = " The amortization per month is below the recommended monthly payoff level(100), change payoff time to " + Math.round((initialloan / 100)/12) + " years." + " Bankloan:" + initialloan + " Interest rate:" + 
+    interestrate*100 + "%" + " Payoff years:" + payofftime/12;
     }
+//backup statement if calculation would be performed despite bankloan limit
     else if(initialloan < 10000)
     {
     document.getElementById('output').style.color = "red";
@@ -150,12 +99,15 @@ function calculate() {
     }
 }
 
+// Code for clear calculation fields
+
 function clearform() {
     document.getElementById("calculate-inputs").reset();
     document.getElementById('calculate').disabled = "disabled";
     document.getElementById('calculate').style.color = "grey";
 }
 
+// Code for enable calculate button
 
 function enableButton(){
     const totalCost = document.getElementById('bankloan').value;
@@ -189,12 +141,10 @@ document.getElementById('calculate').addEventListener("click", function(){
 document.getElementById('clear').addEventListener("click", function(){
     clearform();
 });
-//End of of calculation and result output block.
 
 
-document.getElementById('email-result').addEventListener("click", function(){
-    SendMail();
-});
+// Code for sending mail via EmailJS
+
 function SendMail() {
     var params = {
     from_name : document.getElementById("fullName").value,
@@ -204,7 +154,11 @@ function SendMail() {
     emailjs.send("service_j95t7f7", "template_k65yyrh", params).then(function (res) {alert("Success! " + res.status);
   });
 }
+document.getElementById('email-result').addEventListener("click", function(){
+    SendMail();
+});
 
+// Code for validating email (specific coding)
 
     var emailField = document.getElementById("email-id");
     var emailError = document.getElementById("email-error");
@@ -215,7 +169,6 @@ function SendMail() {
     let button = document.querySelector(".button");
     button.disabled = true;
 
-// Code for validating email (specific coding)
 function validateEmail(){
   
     button.disabled = true;
@@ -224,21 +177,21 @@ function validateEmail(){
     {
     emailError.innerHTML ="Enter a valid emailaddress";
     nameError.innerHTML ="";
-    document.getElementById('email-result').style.color = "grey"  
+    document.getElementById('email-result').style.color = "grey";  
     return false;
     }else if(emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) &&           
     nameField.value === "")
     {
     nameError.innerHTML ="Enter your name";
     emailError.innerHTML ="";
-    document.getElementById('email-result').style.color = "grey"
+    document.getElementById('email-result').style.color = "grey";
     return false;
     }else if(!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) &&           
     nameField.value === "")
    {
     nameError.innerHTML ="Enter your name";
     emailError.innerHTML ="Enter a valid emailaddress";
-    document.getElementById('email-result').style.color = "grey"
+    document.getElementById('email-result').style.color = "grey";
     return false;
     }
     emailError.innerHTML ="";
@@ -249,12 +202,9 @@ function validateEmail(){
 
 document.getElementById('email-id').addEventListener("input", function(event){
    validateEmail();
-  
 });
 
 document.getElementById('fullName').addEventListener("input", function(event){
    validateEmail();
-  
 });
 
-//Mask bankloan field to only allow
