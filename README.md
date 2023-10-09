@@ -240,7 +240,6 @@ W3C Markup Validator
 - JSHint
   - The test gives warning for: 'let'is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). After discussion with my mentor this is not a critical item and can be ignored, it is rather related to a default setting in JS hint and is connected to an extension in JSHint that is not detected/installed.
   - One undefined variable for EmailJS send mail function, however the code snippet is according to instruction and give no error or strange behavior on any device/platform so this message from JShint is ignored.
-  - The function for checking input mask for dot and holds a value temporarily and according to JShint seen as an unused variable, however the function is intended and has to work in this way to avoid/block wrong input when typing, therefore these warnings are ignored. This concerns row 34-51.
     
 - Lighthouse (desktop)
   - Accessibility/SEO
@@ -278,7 +277,7 @@ I also used the following website to test responsiveness:
 
     
 - Known Bugs/compromise
-  - The difference between disable and enable functions for the buttons on a laptop is more clear than on a phone (Iphone), a balance was done with some styling to find the best compromise to compensate for this. A similar situation occurs for the buttons on hover effect where they stay in a default for apple after buttons are activated, on the other hand it is even more clear for the user that button actually has been activated with this built in functionality.
+  - The difference between disabled and enabled buttons on a laptop is more clear than on a phone (Iphone), the styling on the buttons was adapted to suit both devices however still a compromise.
   - The result text is written with monospace to improve the layout, however on very large bank loans the total cost of loan is moved one row making it slightly offset from the other numbers presented in the output window, though in the absolute majority of results this is not the case.
 
  
@@ -286,17 +285,15 @@ I also used the following website to test responsiveness:
 ### Code Used 
 
 - Specific coding
-  - The input type field for bank loans offers  possibilities to control the maximum length of characters if the type text is used instead of type number. Though, with this input type a special code was needed to prevent a dot to be typed in bank loan input type field, the code is inspired by [stackoverflow](https://stackoverflow.com/questions/70303820/avoid-enter-dot-in-input-field) the code section start from row 2 in the javascript file.
-  - Error message for showing name and email error not valid is inspired by [GreatStack](https://www.youtube.com/watch?v=ndNPg8-5jgI) but with added functionality to handle both name and email id field, the tutorial only explains a mail id field. The code starts from row 224. 
-- The email function service code is according to the instruction from [EmailJS](https://www.emailjs.com/). The code starts from row 201 
+  - The payoff years dropdown menu for adding numbers is inspired by [https://stackoverflow.com/questions/43231860/how-to-create-options-from-1-to-100-in-selection-list-by-using-javascript]. The code can be found by searching on "addOptions();".
+  - Error message for showing name and email error not valid is inspired by [GreatStack](https://www.youtube.com/watch?v=ndNPg8-5jgI) but with added functionality to handle both name and email id field, the tutorial only explains a mail id field. The code can be found by searching on "function validateEmail();".
+  - The email function service code is according to the instruction from [EmailJS](https://www.emailjs.com/). The code can be found by searching on "function SendMail()".
 
-
- 
  - General coding
    - For inspiration and tips the major sources were:
    - [W3 Schools](https://www.w3schools.com)
    - [Mozilla](https://developer.mozilla.org/en-US/docs/Learn
-   - [Stackoverflow]https://stackoverflow.com/
+ 
   
 ### Content
 
@@ -305,7 +302,7 @@ The idea is my own and also the basis for which content should be included, thou
 
 ### Acknowledgments
 
-- I would like to thank the following:Collaboration Ter
+- I would like to thank the following:
   - Antonio Rodriguez (mentor) for guidance and support. 
   - Slack community - for quick feedback on various questions
   - My family - for their patience with having me coding sometimes late evenings and nights.  
