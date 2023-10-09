@@ -285,14 +285,14 @@ I also used the following website to test responsiveness:
 ### Code Used 
 
 - Specific coding
-  - The payoff years dropdown menu for adding numbers is inspired by [https://stackoverflow.com/questions/43231860/how-to-create-options-from-1-to-100-in-selection-list-by-using-javascript]. The code can be found by searching on "addOptions();".
+  - The payoff years dropdown menu for adding numbers is inspired by [stackoverflow](https://stackoverflow.com/questions/43231860/how-to-create-options-from-1-to-100-in-selection-list-by-using-javascript). The code can be found by searching on "addOptions();".
   - Error message for showing name and email error not valid is inspired by [GreatStack](https://www.youtube.com/watch?v=ndNPg8-5jgI) but with added functionality to handle both name and email id field, the tutorial only explains a mail id field. The code can be found by searching on "function validateEmail();".
   - The email function service code is according to the instruction from [EmailJS](https://www.emailjs.com/). The code can be found by searching on "function SendMail()".
 
  - General coding
    - For inspiration and tips the major sources were:
    - [W3 Schools](https://www.w3schools.com)
-   - [Mozilla](https://developer.mozilla.org/en-US/docs/Learn
+   - [Mozilla](https://developer.mozilla.org/en-US/docs/Learn)
  
   
 ### Content
