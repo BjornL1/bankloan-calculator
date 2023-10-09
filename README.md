@@ -2,7 +2,7 @@
 
 This site enables calculations of a payoff plan both on a monthly basis as well as displaying the total cost of the loan, by altering the input values on the page, different cost scenarios can be tested.
 
-![landingpage](readme_images/landingpage_.png)
+![landing page](readme_images/landingpage_.png)
 
 Link to the site:
 [BANK LOAN PAYOFF CALCULATOR](https://bjornl1.github.io/bankloan-calculator/)
@@ -59,14 +59,14 @@ Bank loans can be a concern for many households world-wide, the expense can vary
 
 - __Returning User:__
     I am:  
-  - Exploring the calculator function fully and trying with different scenerios to test the threshold levels when the result displays values below the recommended minmumn payoff level.
+  - Exploring the calculator function fully and trying with different scenarios to test the threshold levels when the result displays values below the recommended minimum payoff level.
   - Using the send result function and comparing various results.
 
 ## Design
 ### Colour Scheme
-Since the page concerns financial aspects, the colours used are supposed to give a calm and serious impression for the user. At [Designerly](https://designerly.com/), the specific colour was found which is supposed to meet the above mentioned aspects. The header is a slightly darker blue whereas the calculation input and email fields are slightly lighter of the same suggesting that any input field are identified with a consistent colour, the non-input fields are white. The colour scheme was created with [coolors](https://coolors.co/). 
+Since the page concerns financial aspects, the colours used are supposed to give a calm and serious impression for the user. At [Designerly](https://designerly.com/), the specific colour was found which is supposed to meet the above mentioned aspects. The header is a slightly darker blue whereas the calculation input and email fields are slightly lighter of the same suggesting that any input fields are identified with a consistent colour, the non-input fields are white. The colour scheme was created with [coolors](https://coolors.co/). 
 
-![colourscheme](readme_images/colourscheme.png)
+![colour scheme](readme_images/colourscheme.png)
 
 
 ### Typography        
@@ -125,7 +125,7 @@ Courier (monospace): Result (output text from calculations).
       
     ![](readme_images/calculation_field.png)
 
-  - Result: This section presents to result of the calculation, if the result is according to minimum recommendations the result will be displayed in green to show that the calculation was performed with recommended input values.
+  - Result: This section presents the result of the calculation, if the result is according to minimum recommendations the result will be displayed in green to show that the calculation was performed with recommended input values.
     
     ![](readme_images/calculation_ok.png)
 
@@ -134,7 +134,7 @@ If the calculation is done with values in payoff years leading to a payoff less 
 ![](readme_images/calculation_nok.png) 
 
 - Email send result field
-If the user wishes to send the result, an email function is implemented, this section includes a send result button, name field and a email id field. 
+If the user wishes to send the result, an email function is implemented, this section includes a send result button, name field and an email id field. 
   - The send result button is by default disabled to guide the user to fill the name and email first. Once both fields are filled correctly the button will be enabled.
   - If the full name field is left empty, an error message is presented under the name field, once the name is entered the message is removed.
   - The email field also displays an error if the email is not filled correctly e.g. missing "@".
@@ -220,7 +220,7 @@ Include instructions here on how to deploy your project. For your first project,
 ## Testing
 
 ### Testing User Stories from (UX) Section
--  As a user I am interested in the website's purpose and is eager to test the calculator.
+-  As a user I am interested in the website's purpose and eager to test the calculator.
   - The site has a clean look with few distractions, the fields are labeled and placeholder text to facilitate a short lead time to start calculations. 
 
 - As a user I am understanding how to alternate values for retrieving different results.
@@ -238,8 +238,8 @@ W3C Markup Validator
   - CSS - No errors were found when passing through the official W3C CSS Validator
 
 - JSHint
-  - The test gives warning for: 'let'is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). After discussion with my mentor this is not a critical item and can be ignored, it is rather related to a default setting in JS hint and is connected to an extension in JSHint that is not detected/installed.
-  - One undefined variable for EmailJS send mail function, however the code snippet is according to instruction and give no error or strange behavior on any device/platform so this message from JShint is ignored.
+  - The test gives warning for: 'let' and 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). After discussion with my mentor this is not a critical item and can be ignored, it is rather related to a default setting in JS hint and is connected to an extension in JSHint that is not detected/installed.
+  - One undefined variable for EmailJS send mail function, however the code snippet is according to instructions and gives no error or strange behavior on any device/platform so this message from JShint is ignored.
     
 - Lighthouse (desktop)
   - Accessibility/SEO
@@ -252,11 +252,11 @@ W3C Markup Validator
 ####  Further Testing
 
 - Calculation field
-  - The form has been tested to ensure it would not enable calculation button if the bank loan is less than <10000 or the interest field is empty. It will display a message if the user tries to enter more than two decimals regardless of state for the bank loan field.
+  - The form has been tested to ensure it would not enable the calculation button if the bank loan is less than <10000 or the interest field is empty.
   - The clear button is working independently from input field values as intended, meaning it will clear the fields regardless of value.
     
 - Result: output testing
-  - The result is presented as intended, loans at the lower range and with high value of payoff years are displayed with red if the minimum requirements are not met whereas values passing minimum requirements are displayed with green and costs presented. Re-calculation and new results can be generated without reloading the page. 
+  - The result is presented as intended, loans at the lower range and with too high value of payoff years are displayed with red if the minimum requirements (minimum 100 amortization per month) are not met, whereas values passing minimum requirements are displayed with green and costs presented. Re-calculation and new results can be generated without reloading the page. 
 
 - Send result
 The name and email field was tested individually, the error message is shown for the name field regardless of the status for the email field and vice versa. The send result button is only enabled once both fields are valid, and if any field is changed before sending the mail, the button is set to disabled again.
@@ -279,6 +279,7 @@ I also used the following website to test responsiveness:
 - Known Bugs/compromise
   - The difference between disabled and enabled buttons on a laptop is more clear than on a phone (Iphone), the styling on the buttons was adapted to suit both devices however still a compromise.
   - The result text is written with monospace to improve the layout, however on very large bank loans the total cost of loan is moved one row making it slightly offset from the other numbers presented in the output window, though in the absolute majority of results this is not the case.
+  - A message "An invalid form control with name='' is not focusable." might be presented in the dev tool as an issue , this is known and is no issue for the page. This message field issue refers to a message field which is part of the EmailJS to function and is not visible (intentionally) though needed for proper function.
 
  
 ## Credits
