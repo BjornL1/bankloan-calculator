@@ -116,7 +116,7 @@ Courier (monospace): Result (output text from calculations).
 - Calculation field
   - In this section, the user can test different levels of loan (time and amount). All input fields are restricted to only allow digits (in the interest rate a dot is allowed to handle decimals).
     - The bank loan field is set to an interval of 10000 - 999999999, if a lower value then 10000 is entered the calculate button will remain disabled while a maximum length of 9 characters is set to prevent writing an infinite value.
-    - The interest rate field allows value up to 99.99 %, if left empty the calculate button will remain disabled so the user actively chooses a value rather than accidently performing an invalid calculation. If the user tries to enter more than two decimal digits an error an error message is shown letting the user know only two decimals are allowed.
+    - The interest rate field allows value up to 99.99 %, if left empty the calculate button will remain disabled so the user actively chooses a value rather than accidently performing an invalid calculation.
     - The payoff years field represents the number of years to pay off the loan, the interval is set to 1 - 50 in a dropdown menu.
     - The calculate button is linked to the function calculating the result, the result is presented in 2 different ways;
       - 1: The user has entered a value that is corresponding to the minimum requirement of "100" described in the info text in the first section. The values calculated are: amortization amount per month, first month (highest) cost, average cost per month and the total cost of loan. 
