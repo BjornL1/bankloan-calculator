@@ -12,22 +12,26 @@
   <link rel="icon" href="/favicon.ico">
 </head>
 
+<!-- Header and infotext -->
+  
 <body>
   <h1>Bank loan payoff calculator</h1>
   <p id="instruction-text">Minimum loan amount is <strong>10000, </strong> the maximum interest rate is <strong>99.99% </strong>and the recommended bank loan payoff (amortization) amount per year is 2%.<br>
 If the amortization is calculated below 100 (e.g., €) per month an error message will be displayed suggesting to reduce the number  of payoff years.<br>The loan is calculated by using a fixed amortization amount payoff model, the monthly cost will decrease proportionally to amortization.
 </p>
 
+<!-- Calculation inputs buttons  -->
+  
 <div class ="calculateform">
   <form id="calculate-inputs"> 
     <div class="calculatefields">
       <label for="bankloan" class="required">Bank loan</label>
-      <input id="bankloan" type="text" placeholder=" Min 10000" maxlength="9" minlength="5" required oninput="valid(this)" >
+      <input id="bankloan" type="text" placeholder=" Min 10000" maxlength="9" minlength="5" required>
     </div>
     
     <div class="calculatefields">
       <label for="interest-rate" class="required">Interest rate</label>
-      <input id="interest-rate" type="text" placeholder=" 0.00 (%)" maxlength="5" oninput="valid(this)" required>
+      <input id="interest-rate" type="text" placeholder=" 0.00 (%)" maxlength="5" required>
     </div>
   
     <div class="calculatefields">
@@ -42,6 +46,8 @@ If the amortization is calculated below 100 (e.g., €) per month an error messa
     </div>
 </div>
 
+<!-- Result ouput -->
+
 <h2>Result:</h2>
 <p id="output" class="linebreak"></p>
 
@@ -50,25 +56,29 @@ If the amortization is calculated below 100 (e.g., €) per month an error messa
     <div class="emailitems">
       
       <div class="mailbutton">
-        <button onclick="SendMail()" id="email-result" class="button">Send result</button>
+        <button id="email-result" class="button">Send result</button>
       </div>        
           
       <div class="emailfields">
         <label for="fullName" class="labelpos">Full name</label>     
-        <input type="text" id="fullName">
+        <input type="text" id="fullName" required>
         <p id="name-error"></p>  
       </div>
+    
     </div>
     
       <div class="emailfield">
         <label for="email-id" class="labelpos-email">Email</label>  
-        <input type="email" id="email-id">
+        <input type="email" id="email-id" required>
         <p id="email-error"></p>
       </div>  
       <textarea id="message" placeholder="Message" required></textarea><br>
+  
   </form> 
 </div>
 
+<!-- Links to Javascript and EmailJS  -->
+  
 <script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
