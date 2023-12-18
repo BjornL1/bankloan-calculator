@@ -2,310 +2,370 @@
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-size: 16px;
-  overflow-x: hidden;
-  font-family: 'Amethysta', serif;
-  margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    overflow-x: hidden;
+    font-family: 'Amethysta', serif;
+    margin: 0;
 }
 
-/* Styling for 404 page */
+/* For 404 page styling */
 #four-solution {
-  background-color: #add8e6;
-  padding: 10px;
-}
-#four-o-four {
-  font-family: 'Amethysta' , serif;
-}
-#four-border {
-  width: 200px;
-  margin-left: 20px;
-  color: black;
-  padding-bottom: 10px;
-}
-#four-link{
-  color: black;
-  font-family: 'Amethysta', serif;
-  margin-left: 0;
-  font-size: 16px;
+    background-color: #add8e6;
+    padding: 10px;
 }
 
-/* Title, infotext and generic properties*/
+#four-o-four {
+    font-family: 'Amethysta', serif;
+}
+
+#four-border {
+    width: 200px;
+    margin-left: 20px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+#four-link {
+    color: black;
+    font-family: 'Amethysta', serif;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+/* Header, infotext and generic properties,*/
 .title {
-  display: inline-block;
+    display: inline-block;
 }
+
 h1 {
-  background-color: #0892d0;
-  padding: 20px;
-  color: black;
-  font-family: 'Spectral SC', serif;
+    background-color: #0892d0;
+    padding: 20px;
+    color: black;
+    font-family: 'Spectral SC', serif;
 }
+
 p {
-  margin: 0 0 16px 20px;
-  line-height: 20pt;
+    margin: 0 0 16px 20px;
+    line-height: 20pt;
 }
+
 label {
-  margin: 15px 0 0 10px;
-  font-weight: bold;
-  display: block;
+    margin: 15px 0 0 10px;
+    font-weight: bold;
+    display: block;
 }
+
 .required::after {
-        content: ' *';
-        color: red;
+    content: ' *';
+    color: red;
 }
+
 input {
-  display: block;
-  height: 30px;
-  padding: 5px;
-  margin: 5px 5px 15px 10px;
-  width: 107px;
-  font-family: 'Amethysta', serif;
-  font-size: 16px;
+    display: block;
+    height: 30px;
+    padding: 5px;
+    margin: 5px 5px 15px 10px;
+    width: 107px;
+    font-family: 'Amethysta', serif;
+    font-size: 16px;
 }
+
 button {
-  width: 120px;
-  padding: 0;
-  margin: 39px 20px 0;
-  font: bold 16px 'Amethysta', serif;
-  height: 42px;
-  -webkit-appearance: none;
-  border-radius: 0;
+    width: 120px;
+    padding: 0;
+    margin: 39px 20px 0;
+    font: bold 16px 'Amethysta', serif;
+    height: 42px;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
-button:hover:enabled{
+
+button:hover:enabled {
     background-color: lightgrey;
 }
+
 #instruction-text {
-  margin-right: 100px;
-  line-height: 15pt;
+    margin-right: 100px;
+    line-height: 15pt;
 }
 
 
 /*Calculation section, inputfields and buttons*/
 .calculateform {
-  background-color:#add8e6;
-  padding: 10px;
-  display: flex;
+    background-color: #add8e6;
+    padding: 10px;
+    display: flex;
 }
+
 .calculatefields {
-  display: block;
+    display: block;
 }
+
 #calculate-inputs {
-  display: flex;
+    display: flex;
 }
+
 #calculate-buttons {
-  display: flex;
+    display: flex;
 }
+
 #bankloan {
-  height: 30px;
+    height: 30px;
 }
+
 #payoff-years {
-width: 120px;
-height: 42px;  
-margin: 5px 10px;
-padding: 3px 0 0 5px;
--webkit-appearance: none;
-border-radius: 0;
-font-size: 16px;
+    width: 120px;
+    height: 42px;
+    margin: 5px 10px;
+    padding: 3px 0 0 5px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-size: 16px;
 }
+
 #calculate {
-  margin: 39px 10px 0;
-  color: #616161;
+    margin: 39px 10px 0;
+    color: #616161;
 }
+
 #clear {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 /*Result section*/
 h2 {
-  margin: 10px 0 0 20px;
+    margin: 10px 0 0 20px;
 }
+
 #output {
-  width: 400px;
-  height: 190px;
-  max-width: 44ch;
-  font-family: monospace;
-  margin-bottom: 0;
+    width: 400px;
+    height: 190px;
+    max-width: 44ch;
+    font-family: monospace;
+    margin-bottom: 0;
 }
 
 /*Email, send result section*/
 .emailform {
-  background-color:#add8e6;
-  display: flex;
+    background-color: #add8e6;
+    display: flex;
 }
+
 .emailitems {
-  display: flex;
-  margin: 10px 0 20px;
+    display: flex;
+    margin: 10px 0 20px;
 }
+
 .emailfields {
-  margin-right: 5px;
+    margin-right: 5px;
 }
+
 .mailbutton {
-  margin-top: 38px;
-  width: 100px;
+    margin-top: 38px;
+    width: 100px;
 }
+
 .labelpos {
-  margin: 14px 0 4px 55px;
+    margin: 14px 0 4px 55px;
 }
+
 .labelpos-email {
-  margin-left: 155px;
+    margin-left: 155px;
 }
+
 /* Used for handling the EmailJS function*/
 #message {
-  display: none;
+    display: none;
 }
+
 #email-result {
-  height: 42px;
-  margin: 1px 15px 0 20px;
+    height: 42px;
+    margin: 1px 15px 0 20px;
 }
+
 #fullName {
-  height: 30px;
-  width: 380px;
-  margin: 4px 10px 5px 55px;
-  font-size: 16px;
+    height: 30px;
+    width: 380px;
+    margin: 4px 10px 5px 55px;
+    font-size: 16px;
 }
+
 #name-error {
- margin: 0 55px;
+    margin: 0 55px;
 }
+
 #email-id {
-  height: 30px;
-  width: 380px;
-  margin: 4px 10px 5px 155px;
-  font-size: 16px;
+    height: 30px;
+    width: 380px;
+    margin: 4px 10px 5px 155px;
+    font-size: 16px;
 }
+
 #email-error {
- margin: 0 155px;
+    margin: 0 155px;
 }
 
 /* Media query for ipad/larger mobilephone */
 @media screen and (max-width: 960px) {
 
-.calculateform {
-  background-color:#add8e6;
-  padding: 10px;
-  display: block;
-}
-h1 {
-  font-size: 24px;
-}  
-#calculate {
-margin: 10px 10px 5px 10px;
-}
-#clear {
-  margin-top: 10px;
-}
-#emailinputs {
-  height: 10px;
-}
-.emailitems {
-  display: block;
-  margin-top: 0;
-}
-.mailbutton {
-  width: 100px;
-  margin: 15px 0 20px;
-}
-#fullName {
-  margin-left: 20px;
-}
-#name-error {
-  margin-left: 20px;
-}
-#email-id {
-  margin-left: 20px;
-}
-#email-error {
- margin-left: 20px;
-}
-.labelpos {
-  margin-left: 20px;
-}
-.labelpos-email {
-  margin-left: 25px;
-}
+    .calculateform {
+        background-color: #add8e6;
+        padding: 10px;
+        display: block;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #calculate {
+        margin: 10px 10px 5px 10px;
+    }
+
+    #clear {
+        margin-top: 10px;
+    }
+
+    #emailinputs {
+        height: 10px;
+    }
+
+    .emailitems {
+        display: block;
+        margin-top: 0;
+    }
+
+    .mailbutton {
+        width: 100px;
+        margin: 15px 0 20px;
+    }
+
+    #fullName {
+        margin-left: 20px;
+    }
+
+    #name-error {
+        margin-left: 20px;
+    }
+
+    #email-id {
+        margin-left: 20px;
+    }
+
+    #email-error {
+        margin-left: 20px;
+    }
+
+    .labelpos {
+        margin-left: 20px;
+    }
+
+    .labelpos-email {
+        margin-left: 25px;
+    }
 }
 
 /* Media query for medium/small mobilephone */
 @media screen and (max-width: 524px) {
 
-h1 {    
-   font-size: 15px;
-}
-#instruction-text {
-  font-size: 15px;
-}
-#calculate-inputs {
-  display: block;
-}
-#output {
-  height: 190px;
-  font-size: 12px;  
-}
+    h1 {
+        font-size: 15px;
+    }
 
-.emailform {
-background-color:#add8e6;
-}
-.emailfields {
-  margin-left: 15px;
-}
-.emailitems {
-  display: block;
-  margin: 0;
-}
-.mailbutton {
-  margin-top: 10px;
-  height: 10px;
-}
-#email-result {
-  margin: 5px 10px 0 20px;
-  padding: 0;
-}
-#fullName {
- margin: 5px 5px 4px 5px;
-  width: 270px;
-}
-#name-error {
-  margin-left: 5px;
-}
-#email-id {
-  margin: 5px 0 0 20px;
-  width: 270px;
-} 
-#email-error {
-  margin-top: 5px;
-}
-.labelpos {
-  margin-top: 60px;
-  margin-left: 5px;
-  margin: 60px 0 0 5px;
-  }
-.labelpos-email {
-  margin-left: 20px;
-}
+    #instruction-text {
+        font-size: 15px;
+    }
+
+    #calculate-inputs {
+        display: block;
+    }
+
+    #output {
+        height: 190px;
+        font-size: 12px;
+    }
+
+    .emailform {
+        background-color: #add8e6;
+    }
+
+    .emailfields {
+        margin-left: 15px;
+    }
+
+    .emailitems {
+        display: block;
+        margin: 0;
+    }
+
+    .mailbutton {
+        margin-top: 10px;
+        height: 10px;
+    }
+
+    #email-result {
+        margin: 5px 10px 0 20px;
+        padding: 0;
+    }
+
+    #fullName {
+        margin: 5px 5px 4px 5px;
+        width: 270px;
+    }
+
+    #name-error {
+        margin-left: 5px;
+    }
+
+    #email-id {
+        margin: 5px 0 0 20px;
+        width: 270px;
+    }
+
+    #email-error {
+        margin-top: 5px;
+    }
+
+    .labelpos {
+        margin-top: 60px;
+        margin-left: 5px;
+        margin: 60px 0 0 5px;
+    }
+
+    .labelpos-email {
+        margin-left: 20px;
+    }
 }
 
 /* Media query for smallest display */
 @media screen and (max-width: 319px) {
 
-#instruction-text {
-  font-size: 12px;
-}
-#calculate-buttons {
-  display: block;
-}
-#clear {
-  margin-left: 10px;
-}
-#output {
-  height: 270px;
-  width: 200px;
-}
-#fullName {
- margin: 5px 5px 4px 5px;
-  max-width: 227px;
-}
-#email-id {
-  margin: 5px 0 0 20px;
-  max-width: 227px;
-} 
+    #instruction-text {
+        font-size: 12px;
+    }
+
+    #calculate-buttons {
+        display: block;
+    }
+
+    #clear {
+        margin-left: 10px;
+    }
+
+    #output {
+        height: 270px;
+        width: 200px;
+    }
+
+    #fullName {
+        margin: 5px 5px 4px 5px;
+        max-width: 227px;
+    }
+
+    #email-id {
+        margin: 5px 0 0 20px;
+        max-width: 227px;
+    }
 }
