@@ -34,7 +34,9 @@ body {
     font-size: 16px;
 }
 
-/* Header, infotext and generic properties,*/
+/* Header, infotext and generic styling properties, A red asterisk (*) is included next 
+to mandatory input fields, serving as a visual cue across all devices to clearly 
+indicate their required status.  */
 .title {
     display: inline-block;
 }
@@ -92,7 +94,7 @@ button:hover:enabled {
 }
 
 
-/*Calculation section, inputfields and buttons*/
+/*Calculation section, mainly positioning/size for inputfields and button size positioning*/
 .calculateform {
     background-color: #add8e6;
     padding: 10px;
@@ -134,7 +136,11 @@ button:hover:enabled {
     margin-left: 5px;
 }
 
-/*Result section*/
+/*Result section, the #output block is defined with a specific height and character count to 
+enhance readability in the table layout. This customization is particularly 
+important because the output results may vary in character length, and the predefined dimensions 
+optimize the presentation for better visual consistency.
+*/
 h2 {
     margin: 10px 0 0 20px;
 }

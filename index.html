@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +10,48 @@
     <title>Bank loan payoff calculator</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-  </head>
+</head>
 
-  <!-- Header and infotext explaining loan calculator details -->
+<!-- Header and infotext explaining loan calculator details -->
 
-  <body>
+<body>
     <h1>Bank loan payoff calculator</h1>
     <p id="instruction-text">
-      Minimum loan amount is <strong>10000, </strong> the maximum interest rate
-      is <strong>99.99% </strong>and the recommended bank loan payoff
-      (amortization) amount per year is 2%.<br>
-      If the amortization is calculated below 100 (e.g., €) per month an error
-      message will be displayed suggesting to reduce the number of payoff
-      years.<br>The loan is calculated by using a fixed amortization amount
-      payoff model, the monthly cost will decrease proportionally to
-      amortization.
+        Minimum loan amount is <strong>10000, </strong> the maximum interest rate
+        is <strong>99.99% </strong>and the recommended bank loan payoff
+        (amortization) amount per year is 2%.<br>
+        If the amortization is calculated below 100 (e.g., €) per month an error
+        message will be displayed suggesting to reduce the number of payoff
+        years.<br>The loan is calculated by using a fixed amortization amount
+        payoff model, the monthly cost will decrease proportionally to
+        amortization.
     </p>
 
-    <!-- Form for user input with bank loan, interest rate, and payoff years -->
+    <!-- Form for user input with bank loan, interest rate, and payoff years,  
+    min/max length requirement added to ensure rational calculations are performed 
+    (mainly to prevent infinite number of digits to be added) -->
 
     <div class="calculateform">
-      <form id="calculate-inputs">
-        <div class="calculatefields">
-          <label for="bankloan" class="required">Bank loan</label>
-          <input
-            id="bankloan"
-            type="text"
-            placeholder=" Min 10000"
-            maxlength="9"
-            minlength="5"
-            required
-          >
-        </div>
+        <form id="calculate-inputs">
+            <div class="calculatefields">
+                <label for="bankloan" class="required">Bank loan</label>
+                <input id="bankloan" type="text" placeholder=" Min 10000" maxlength="9" minlength="5" required>
+            </div>
 
-        <div class="calculatefields">
-          <label for="interest-rate" class="required">Interest rate</label>
-          <input
-            id="interest-rate"
-            type="text"
-            placeholder=" 0.00 (%)"
-            maxlength="5"
-            required
-          >
-        </div>
+            <div class="calculatefields">
+                <label for="interest-rate" class="required">Interest rate</label>
+                <input id="interest-rate" type="text" placeholder=" 0.00 (%)" maxlength="5" required>
+            </div>
 
-        <div class="calculatefields">
-          <label for="payoff-years">Payoff years</label>
-          <select id="payoff-years"></select>
+            <div class="calculatefields">
+                <label for="payoff-years">Payoff years</label>
+                <select id="payoff-years"></select>
+            </div>
+        </form>
+        <div id="calculate-buttons">
+            <button id="calculate" disabled="disabled">Calculate</button><br>
+            <button id="clear">Clear</button>
         </div>
-      </form>
-      <div id="calculate-buttons">
-        <button id="calculate" disabled="disabled">Calculate</button><br>
-        <button id="clear">Clear</button>
-      </div>
     </div>
 
     <!-- Section reserved for displaying calculation results -->
@@ -72,26 +62,26 @@
     <!-- Form for user to input email details and send calculation result -->
 
     <div class="emailform">
-      <form id="email-inputs">
-        <div class="emailitems">
-          <div class="mailbutton">
-            <button id="email-result" class="button">Send result</button>
-          </div>
+        <form id="email-inputs">
+            <div class="emailitems">
+                <div class="mailbutton">
+                    <button id="email-result" class="button">Send result</button>
+                </div>
 
-          <div class="emailfields">
-            <label for="fullName" class="labelpos">Full name</label>
-            <input type="text" id="fullName" required>
-            <p id="name-error"></p>
-          </div>
-        </div>
+                <div class="emailfields">
+                    <label for="fullName" class="labelpos">Full name</label>
+                    <input type="text" id="fullName" required>
+                    <p id="name-error"></p>
+                </div>
+            </div>
 
-        <div class="emailfield">
-          <label for="email-id" class="labelpos-email">Email</label>
-          <input type="email" id="email-id" required>
-          <p id="email-error"></p>
-        </div>
-        <textarea id="message" placeholder="Message" required></textarea><br>
-      </form>
+            <div class="emailfield">
+                <label for="email-id" class="labelpos-email">Email</label>
+                <input type="email" id="email-id" required>
+                <p id="email-error"></p>
+            </div>
+            <textarea id="message" name="message" placeholder="Message" required></textarea><br>
+        </form>
     </div>
 
     <!-- Links to JavaScript files for calculator functionality -->
@@ -99,9 +89,10 @@
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-      (function () {
-        emailjs.init("9Rn85BVMw5tOgNBB5");
-      })();
+        (function () {
+            emailjs.init("9Rn85BVMw5tOgNBB5");
+        })();
     </script>
-  </body>
+</body>
+
 </html>
