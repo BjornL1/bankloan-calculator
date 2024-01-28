@@ -23,14 +23,14 @@ interestMask.addEventListener("input", function () {
 
 let fieldLength = document.getElementById("interest-rate");
 fieldLength.addEventListener("input", function () {
-  var copyLength = fieldLength.value;
-  var dotCount = copyLength.split('.').length - 1;
+  let copyLength = fieldLength.value;
+  let dotCount = copyLength.split('.').length - 1;
   if (dotCount > 1) {
     copyLength = copyLength.slice(0, copyLength.lastIndexOf('.'));
   }
   fieldLength.value = copyLength.replace(/\.{2,}/g, ".");
   if (fieldLength.value.includes(".")) {
-    var splitField = fieldLength.value.split(".");
+    let splitField = fieldLength.value.split(".");
     splitField[1] = splitField[1].substring(0, 2);
     fieldLength.value = splitField.join(".");
   } else {
