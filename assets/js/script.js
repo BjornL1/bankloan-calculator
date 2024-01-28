@@ -7,30 +7,34 @@ Second block: Allows only digits and dots for interest rate input (the dot is th
 Third block: Allows only two decimals after the dot for the interest rate input.
 */
 
-let bankloan = document.getElementById("bankloan");
-bankloan.addEventListener("input", function () {
-  var bankcopy = bankloan.value;
-  bankcopy = bankcopy.replaceAll(/\D+/g, "");
-  bankloan.value = bankcopy;
+let bankLoan = document.getElementById("bankloan");
+bankLoan.addEventListener("input", function () {
+  let bankCopy = bankLoan.value;
+  bankCopy = bankCopy.replaceAll(/\D+/g, "");
+  bankLoan.value = bankCopy;
 });
 
-let interestmask = document.getElementById("interest-rate");
-interestmask.addEventListener("input", function () {
-  var rate = interestmask.value;
+let interestMask = document.getElementById("interest-rate");
+interestMask.addEventListener("input", function () {
+  let rate = interestMask.value;
   rate = rate.replace(/[^0-9.]/g, "");
-  interestmask.value = rate;
+  interestMask.value = rate;
 });
 
-let fieldlength = document.getElementById("interest-rate");
-fieldlength.addEventListener("input", function () {
-  var copylength = fieldlength.value;
-  fieldlength.value = copylength.replace(/\.{2,}/g, ".");
-  if (fieldlength.value.includes(".")) {
-    var splitfield = fieldlength.value.split(".");
-    splitfield[1] = splitfield[1].substring(0, 2);
-    fieldlength.value = splitfield.join(".");
+let fieldLength = document.getElementById("interest-rate");
+fieldLength.addEventListener("input", function () {
+  var copyLength = fieldLength.value;
+  var dotCount = copyLength.split('.').length - 1;
+  if (dotCount > 1) {
+    copyLength = copyLength.slice(0, copyLength.lastIndexOf('.'));
+  }
+  fieldLength.value = copyLength.replace(/\.{2,}/g, ".");
+  if (fieldLength.value.includes(".")) {
+    var splitField = fieldLength.value.split(".");
+    splitField[1] = splitField[1].substring(0, 2);
+    fieldLength.value = splitField.join(".");
   } else {
-    fieldlength.value = fieldlength.value.substr(0, 2);
+    fieldLength.value = fieldLength.value.substr(0, 2);
   }
 });
 
