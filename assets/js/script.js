@@ -128,7 +128,7 @@ function calculate() {
   }
 }
 
-// Code for clearing calculation fields and enable new input.
+// Code for clearing calculation fields and enable new input to user.
 
 function clearform() {
   document.getElementById("calculate-inputs").reset();
@@ -192,6 +192,8 @@ function SendMail() {
         alert("Success! " + res.status);
       });
   }
+  
+  // Event listener for sending email when the corresponding button is clicked
   document.getElementById("email-result").addEventListener("click", function () {
     SendMail();
   });
