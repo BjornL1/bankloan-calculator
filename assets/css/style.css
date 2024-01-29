@@ -181,7 +181,9 @@ h2 {
     margin-left: 155px;
 }
 
-/* Used for handling the EmailJS function*/
+/* The built-in message box is required in EmailJS for proper function; however, it 
+   is not used in this project and is therefore positioned outside 
+   the page to the left. 'display: none' is not possible."*/
 #message {
     position: absolute;
     left: -9999px;

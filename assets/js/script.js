@@ -62,30 +62,30 @@ would be performed below the limit of bank loan of 10000, a back-up message will
 
 function calculate() {
   let loan = document.getElementById("bankloan").value;
-  let interestrate = document.getElementById("interest-rate").value;
-  interestrate = interestrate / 100;
-  let payofftime = document.getElementById("payoff-years").selectedIndex + 1;
-  payofftime = payofftime * 12;
+  let interestRate = document.getElementById("interest-rate").value;
+  interestRate = interestRate / 100;
+  let payoffTime = document.getElementById("payoff-years").selectedIndex + 1;
+  payoffTime = payoffTime * 12;
 
-  const initialloan = loan;
-  const amortization = Math.ceil(initialloan / payofftime);
+  let initialLoan = loan;
+  let amortization = Math.ceil(initialLoan / payoffTime);
 
-  let firstmonth = Math.ceil((loan * interestrate) / 12) + loan / payofftime;
-  let interesttotal = 0;
-  let interesttemp = 0;
-  let monthtotal = 0;
-  let totalcost = 0;
+  let firstMonth = Math.ceil((loan * interestRate) / 12) + loan / payoffTime;
+  let interestTotal = 0;
+  let interestTemp = 0;
+  let monthTotal = 0;
+  let totalCost = 0;
 
-  for (let i = 0; i < payofftime; i++) {
+  for (let i = 0; i < payoffTime; i++) {
     loan = loan - amortization;
-    interesttemp = (loan * interestrate) / 12;
-    interesttotal = interesttotal + interesttemp;
+    interestTemp = (loan * interestRate) / 12;
+    interestTotal = interestTotal + interestTemp;
   }
 
-  if (initialloan >= 10000 && amortization >= 100) {
-    interesttotal = interesttotal + (interestrate * initialloan) / 12;
-    totalcost = Math.ceil(amortization) * payofftime + interesttotal;
-    monthtotal = totalcost / payofftime;
+  if (initialLoan >= 10000 && amortization >= 100) {
+    interestTotal = interestTotal + (interestRate * initialLoan) / 12;
+    totalCost = Math.ceil(amortization) * payoffTime + interestTotal;
+    monthTotal = totalCost / payoffTime;
 
     document.getElementById("output").style.color = "green";
     document.getElementById("output").innerHTML =
@@ -93,35 +93,35 @@ function calculate() {
       Math.ceil(amortization) +
       ". " +
       "First month (highest) cost________:" +
-      Math.ceil(firstmonth) +
+      Math.ceil(firstMonth) +
       ". " +
       "Average cost per month____________:" +
-      Math.round(monthtotal) +
+      Math.round(monthTotal) +
       ". " +
       "Total cost of loan:_______________:" +
-      Math.ceil(totalcost) +
+      Math.ceil(totalCost) +
       ". " +
       "Bankloan:" +
-      initialloan +
+      initialLoan +
       " Interest rate:" +
-      interestrate * 100 +
+      interestRate * 100 +
       "%" +
       " Payoff years:" +
-      payofftime / 12;
-  } else if (initialloan >= 10000 && amortization < 100) {
+      payoffTime / 12;
+  } else if (initialLoan >= 10000 && amortization < 100) {
     document.getElementById("output").style.color = "red";
     document.getElementById("output").innerHTML =
       " The amortization per month is below the recommended monthly payoff level(100), change payoff time to " +
-      Math.round(initialloan / 100 / 12) +
+      Math.round(initialLoan / 100 / 12) +
       " years." +
       " Bankloan:" +
-      initialloan +
+      initialLoan +
       " Interest rate:" +
-      interestrate * 100 +
+      interestRate * 100 +
       "%" +
       " Payoff years:" +
-      payofftime / 12;
-  } else if (initialloan < 10000) {
+      payoffTime / 12;
+  } else if (initialLoan < 10000) {
     document.getElementById("output").style.color = "red";
     document.getElementById("output").innerHTML =
       " Change bank loan to minimum 10000";
@@ -141,13 +141,13 @@ enabled to guide user to enter correct input, if the inputs are not
 numbers (interest rate and bank loan) or to low value (bank loan)*/
 
 function enableButton() {
-  const totalCost = document.getElementById("bankloan").value;
-  const interestRate = document.getElementById("interest-rate").value;
+  let loanEnable = document.getElementById("bankloan").value;
+  let interestEnable = document.getElementById("interest-rate").value;
 
-  if (isNaN(parseFloat(totalCost))) {
+  if (isNaN(parseFloat(loanEnable))) {
     document.getElementById("calculate").disabled = "disabled";
     document.getElementById("calculate").style.color = "grey";
-  } else if (isNaN(parseFloat(interestRate)) || totalCost < 10000) {
+  } else if (isNaN(parseFloat(interestEnable)) || loanEnable < 10000) {
     document.getElementById("calculate").disabled = "disabled";
     document.getElementById("calculate").style.color = "grey";
   } else {
