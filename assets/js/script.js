@@ -41,8 +41,8 @@ fieldLength.addEventListener("input", function () {
 // Adding numbers to the drop down menu for users to choose payoff years(specific coding).
 
 function addOptions() {
-  var select = document.getElementById("payoff-years");
-  var i = 0;
+  let select = document.getElementById("payoff-years");
+  let i = 0;
   do {
     select.options[select.options.length] = new Option(i + 1, i);
     i++;
@@ -181,21 +181,21 @@ document.getElementById("clear").addEventListener("click", function () {
 // Code for sending mail via EmailJS
 
 function SendMail() {
-  var params = {
-    from_name: document.getElementById("fullName").value,
-    email_id: document.getElementById("email-id").value,
-    message: document.getElementById("output").innerHTML,
-  };
-  emailjs
-    .send("service_j95t7f7", "template_k65yyrh", params)
-    .then(function (res) {
-      alert("Success! " + res.status);
-    });
-}
-document.getElementById("email-result").addEventListener("click", function () {
-  SendMail();
-});
-
+    var params = {
+      from_name: document.getElementById("fullName").value,
+      email_id: document.getElementById("email-id").value,
+      message: document.getElementById("output").innerHTML,
+    };
+    emailjs
+      .send("service_j95t7f7", "template_k65yyrh", params)
+      .then(function (res) {
+        alert("Success! " + res.status);
+      });
+  }
+  document.getElementById("email-result").addEventListener("click", function () {
+    SendMail();
+  });
+  
 /*Code for validating email (specific coding), this ensures
 a valid email (valid characters included) and name is 
 entered ensuring a result to be sent intentionally 

@@ -183,7 +183,8 @@ h2 {
 
 /* Used for handling the EmailJS function*/
 #message {
-    display: none;
+    position: absolute;
+    left: -9999px;
 }
 
 #email-result {
