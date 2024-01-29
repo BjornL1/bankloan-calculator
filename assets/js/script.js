@@ -141,8 +141,8 @@ enabled to guide user to enter correct input, if the inputs are not
 numbers (interest rate and bank loan) or to low value (bank loan)*/
 
 function enableButton() {
-  let loanEnable = document.getElementById("bankloan").value;
-  let interestEnable = document.getElementById("interest-rate").value;
+  const loanEnable = document.getElementById("bankloan").value;
+  const interestEnable = document.getElementById("interest-rate").value;
 
   if (isNaN(parseFloat(loanEnable))) {
     document.getElementById("calculate").disabled = "disabled";
@@ -181,7 +181,7 @@ document.getElementById("clear").addEventListener("click", function () {
 // Code for sending mail via EmailJS
 
 function SendMail() {
-    var params = {
+    let params = {
       from_name: document.getElementById("fullName").value,
       email_id: document.getElementById("email-id").value,
       message: document.getElementById("output").innerHTML,
@@ -203,11 +203,11 @@ and also to the correct address. The red marked error messages are displayed
 to highlight faulty or missing input.
 */
 
-var emailField = document.getElementById("email-id");
-var emailError = document.getElementById("email-error");
+const emailField = document.getElementById("email-id");
+const emailError = document.getElementById("email-error");
 document.getElementById("email-error").style.color = "#b30000";
 const nameField = document.getElementById("fullName");
-var nameError = document.getElementById("name-error");
+const nameError = document.getElementById("name-error");
 document.getElementById("name-error").style.color = "#b30000";
 let button = document.querySelector(".button");
 button.disabled = true;
