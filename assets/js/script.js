@@ -193,11 +193,12 @@ function SendMail() {
       });
   }
   
-  // Event listener for sending email when the corresponding button is clicked
-  document.getElementById("email-result").addEventListener("click", function () {
-    SendMail();
-  });
-  
+// Event listener for sending email when the corresponding button is clicked
+document.getElementById("email-result").addEventListener("click", function (event) {
+  event.preventDefault();
+  SendMail();
+});
+
 /*Code for validating email (specific coding), this ensures
 a valid email (valid characters included) and name is 
 entered ensuring a result to be sent intentionally 

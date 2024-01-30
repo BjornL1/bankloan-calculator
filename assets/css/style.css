@@ -181,12 +181,14 @@ h2 {
     margin-left: 155px;
 }
 
-/* The built-in message box is required in EmailJS for proper function; however, it 
-   is not used in this project and is therefore positioned outside 
-   the page to the left. 'display: none' is not possible."*/
-#message {
-    position: absolute;
-    left: -9999px;
+/* The built-in message feature is required in EmailJS for proper function; however, it 
+   is not used in this project and is therefore hidden by implementing a transparent 
+   placeholder,'display: none' is not possible.*/
+#hidden {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    margin: 0;
 }
 
 #email-result {

@@ -59,10 +59,13 @@
     <h2>Result:</h2>
     <p id="output"></p>
 
-    <!-- Form for user to input email details and send calculation result -->
+    <!-- Form for users to input email details. "novalidate" is used, as 
+    custom-made requirements are implemented. The "required" attribute is included below 
+    for email and names is to indicate, especially for screen readers, that the user must 
+    enter their full name and email details for proper EmailJS functionality. -->
 
     <div class="emailform">
-        <form id="email-inputs">
+        <form id="email-inputs" novalidate>
             <div class="emailitems">
                 <div class="mailbutton">
                     <button id="email-result" class="button">Send result</button>
@@ -80,8 +83,13 @@
                 <input type="email" id="email-id" required>
                 <p id="email-error"></p>
             </div>
-            <textarea id="message" name="message" placeholder="message" required></textarea><br>
-        </form>
+            
+            <!-- The below input is not for direct user interaction and is needed (with required set) 
+                 for EmailJS to function properly. Using type="number" to prevent 
+                 autocomplete text and keep the field empty.-->
+                 <input id="hidden" type="number" name="message"><br>
+
+        </form> 
     </div>
 
     <!-- Links to JavaScript files for calculator functionality -->
