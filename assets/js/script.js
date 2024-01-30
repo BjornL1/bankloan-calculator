@@ -218,6 +218,7 @@ let button = document.querySelector(".button");
 button.disabled = true;
 
 function validateEmail() {
+  event = event || window.event;
   button.disabled = true;
   if (
     !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) &&
