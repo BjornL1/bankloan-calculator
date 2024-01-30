@@ -94,7 +94,7 @@ button:hover:enabled {
 }
 
 
-/*Calculation section, mainly positioning/size for inputfields and button size positioning*/
+/*Calculation section, mainly positioning/size for input fields and button size positioning*/
 .calculateform {
     background-color: #add8e6;
     padding: 10px;
@@ -218,7 +218,7 @@ h2 {
     margin: 0 155px;
 }
 
-/* Media query for ipad/larger mobilephone */
+/* Media query for ipad/larger mobile phone */
 @media screen and (max-width: 960px) {
 
     .calculateform {
@@ -278,7 +278,7 @@ h2 {
     }
 }
 
-/* Media query for medium/small mobilephone */
+/* Media query for medium/small mobile phone */
 @media screen and (max-width: 524px) {
 
     h1 {

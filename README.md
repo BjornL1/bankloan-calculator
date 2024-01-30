@@ -279,7 +279,6 @@ I also used the following website to test responsiveness:
 - Known Bugs/compromise
   - The difference between disabled and enabled buttons on a laptop is more clear than on a phone (Iphone), the styling on the buttons was adapted to suit both devices however still a compromise.
   - The result text is written with monospace to improve the layout, however on very large bank loans the total cost of loan is moved one row making it slightly offset from the other numbers presented in the output window, though in the absolute majority of results this is not the case.
-  - A message "An invalid form control with name='' is not focusable." might be presented in the dev tool as an issue , this is known and is no issue for the page. This message field issue refers to a message field which is part of the EmailJS to function and is not visible (intentionally) though needed for proper function.
 
  
 ## Credits

@@ -1,7 +1,8 @@
 /*
 The following three code blocks are designed to prevent users trying
 to insert invalid characters in the input fields thus ensuring correct/rational data
-is used for the calculations.
+is used for the calculations, the functions are split into three sections enabling 
+efficient maintenance tasks.
 First block: Allows only digits for the bank loan input to be added.
 Second block: Allows only digits and dots for interest rate input (the dot is the decimal point).
 Third block: Allows only two decimals after the dot for the interest rate input.
@@ -54,10 +55,11 @@ addOptions();
 
 /*
 The calculation code returns a table with results to to the user, if the values presented
-in the output field are within the recommended range (described under the header of the page), the 
-values will be displayed in green indicating proper input has been given. For values outside this range the
-messages will include a recommendation and are displayed in red. If, for any a reason a calculation 
-would be performed below the limit of bank loan of 10000, a back-up message will be displayed in red.
+in the output field are within the recommended range (minimum 10000 in loan, interest rate max 99,99% and 
+proper payoff time selected), the values will be displayed in green indicating proper input has been given. 
+For values outside these conditions, messages will include a recommendation and are displayed in red. If, for any a 
+reason a calculation would be performed below the limit of bank loan of 10000, a back-up message will 
+be displayed in red.
 */
 
 function calculate() {
@@ -128,7 +130,7 @@ function calculate() {
   }
 }
 
-// Code for clearing calculation fields and enable new input to user.
+// Code for clearing calculation fields and enabling new input to users.
 
 function clearform() {
   document.getElementById("calculate-inputs").reset();
@@ -202,8 +204,8 @@ document.getElementById("email-result").addEventListener("click", function (even
 /*Code for validating email (specific coding), this ensures
 a valid email (valid characters included) and name is 
 entered ensuring a result to be sent intentionally 
-and also to the correct address. The red marked error messages are displayed
-to highlight faulty or missing input.
+and also to the correct address. The red (#b30000) marked error messages 
+are displayed to highlight faulty or missing input.
 */
 
 const emailField = document.getElementById("email-id");
@@ -221,7 +223,7 @@ function validateEmail() {
     !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/) &&
     nameField.value !== ""
   ) {
-    emailError.innerHTML = "Enter a valid emailaddress";
+    emailError.innerHTML = "Enter a valid email address";
     nameError.innerHTML = "";
     document.getElementById("email-result").style.color = "grey";
     return false;
