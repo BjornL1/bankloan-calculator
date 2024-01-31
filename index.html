@@ -84,8 +84,9 @@
                 <p id="email-error"></p>
             </div>
             
-            <!-- The below input is not for direct user interaction and is needed (with required set) 
-                 for EmailJS to function properly. Using type="hidden" to prevent 
+            <!-- The below input is not for direct user interaction and shall not be visible for users but 
+                 is needed (with required set) for EmailJS to function properly. Using type="search" for the input
+                 which is compatible with different browsers to prevent 
                  autocomplete text and keep the field empty.-->
                  <input id="hidden" type="search" name="message" required><br>
 
