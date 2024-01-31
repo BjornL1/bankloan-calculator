@@ -1,6 +1,6 @@
 # BANK LOAN PAYOFF CALCULATOR
 
-This site enables calculations of a payoff plan both on a monthly basis as well as displaying the total cost of the loan, by altering the input values on the page, different cost scenarios can be tested.
+This site enables calculations of a payoff plan both on a monthly basis as well as displaying the total cost of the loan, and by  altering the input values on the page different cost scenarios can be tested
 
 ![landing page](readme_images/landingpage_.png)
 
